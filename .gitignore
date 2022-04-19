@@ -1,3 +1,4 @@
+#*************C++ related ignore files*************
 # Prerequisites
 *.d
 
@@ -30,3 +31,54 @@
 *.exe
 *.out
 *.app
+
+#*************Java related ignore files*************
+
+Skip to content
+Search or jump to…
+Pull requests
+Issues
+Marketplace
+Explore
+ 
+@codetrixter 
+github
+/
+gitignore
+Public
+Code
+Pull requests
+239
+Actions
+Security
+Insights
+gitignore/Java.gitignore
+@sryze
+sryze Add replay_pid* to Java.gitignore
+Latest commit e111f1c on Nov 14, 2021
+ History
+ 9 contributors
+@tcthien@sjwoodr@Stevoisiak@fhemberger@sryze@oscarandreu@fboulay@cboutter@Bananeweizen
+24 lines (19 sloc)  290 Bytes
+   
+# Compiled class file
+*.class
+
+# Log file
+*.log
+
+# BlueJ files
+*.ctxt
+
+# Mobile Tools for Java (J2ME)
+.mtj.tmp/
+
+# Package Files #
+*.jar
+*.war
+*.nar
+*.ear
+*.zip
+*.tar.gz
+*.rar
+
