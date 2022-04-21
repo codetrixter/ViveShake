@@ -1,7 +1,6 @@
-public class ZigZagMatrix{
+public class ZigZagMatrix {
     public static void main(String args []) {
         //WAP which will take input n and store 1 to n*n nums in nxn matrix in zigzag manner
-     
         // Ex 1:n = 2 then:
         // [[1,2]
         //  [4,3]]
@@ -49,11 +48,8 @@ public class ZigZagMatrix{
                 increasing = true;
             }
         }
-
-
         return matrix;
      }
-
 
      private static void printMatrix(int [][] matrix) {
          int n = matrix.length;//it is n*n
