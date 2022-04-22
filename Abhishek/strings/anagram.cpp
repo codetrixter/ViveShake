@@ -12,30 +12,41 @@
 
 bool isAnagram(char *s1, char *s2)
 {
-    int sum1 =0, sum2 = 0;
-    bool status = false;
+    int count1 = 0, count2 = 0;
     for(int i = 0; s1[i] != '\0'; i++)
     {
-        sum1 += s1[i];
+        count1++;
+    }
+    for(int i = 0; s2[i] != '\0'; i++)
+    {
+        count2++;
+    }
+    if(count1 != count2)
+        return false;
+
+    int arr[26] = {0};
+
+    for(int i = 0; s1[i] != '\0'; i++)
+    {
+        arr[s1[i]-97]++; 
+        arr[s2[i]-97]--;
     }
 
-    for(int j = 0; s2[j] != '\0'; j++)
+    for(int i = 0; i < 26; i++)
     {
-        sum2 += s1[j];
+        if(arr[i] != 0)
+        {
+            return false;
+        }
     }
+    return true;
 
-    if(sum1 == sum2)
-    {
-        status = true;
-    }
-    
-    return status;
 }
 
 int main(int argc, char const *argv[])
 {
-    char str[] = "listen";
-    char str2[] = "silent";
+    char str[] = "aa";
+    char str2[] = "bb";
 
     std::cout << isAnagram(str, str2);
 
