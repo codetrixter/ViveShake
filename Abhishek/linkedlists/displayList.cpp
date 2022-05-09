@@ -1,59 +1,61 @@
-/**
- * @file displayList.cpp
- * @author Abhishek
- * @brief Impementing displaying to list by creating it via an array.
- * @version 0.1
- * @date 2022-05-02
- * 
- * @copyright Copyright (c) 2022
- * 
- */
-
-#include <iostream>
-using namespace std;
- 
-class Node{
-public:
+#include <stdio.h>
+#include <stdlib.h>
+struct Node
+{
     int data;
-    Node* next;
-};
- 
-int main() {
- 
-    int A[] = {3, 5, 7, 10, 15};
- 
-    Node* head = new Node;
- 
-    Node* temp;
-    Node* last;
- 
-    head->data = A[0];
-    head->next = nullptr;
-    last = head;
- 
-    // Create a Linked List
-    for (int i=1; i<sizeof(A)/sizeof(A[0]); i++){
- 
-        // Create a temporary Node
-        temp = new Node;
- 
-        // Populate temporary Node
-        temp->data = A[i];
-        temp->next = nullptr;
- 
-        // last's next is pointing to temp
-        last->next = temp;
-        last = temp;
+    struct Node *next;
+} *first = NULL;
+
+void create(int A[], int n)
+{
+    int i;
+    struct Node *t, *last;
+    first = (struct Node *)malloc(sizeof(struct Node));
+    first->data = A[0];
+    first->next = NULL;
+    last = first;
+    for (i = 1; i < n; i++)
+    {
+        t = (struct Node *)malloc(sizeof(struct Node));
+        t->data = A[i];
+        t->next = NULL;
+        last->next = t;
+        last = t;
     }
- 
-    // Display Linked List
-    Node* p = head;
- 
-    while (p != nullptr){
-        cout << p->data << " -> " << flush;
+}
+
+void Display(struct Node *p)
+{
+    while (p != NULL)
+    {
+        printf("%d ", p->data);
         p = p->next;
     }
-    cout << "null";
- 
+}
+
+void RecursiveDisplay(struct Node *p)
+{
+    if(p != NULL)
+    {
+        printf("%d", p->data);
+        RecursiveDisplay(p->next);
+    }
+}
+
+void ReverseDisplay(struct Node *p)
+{
+    if (p != NULL)
+    {
+        RDisplay(p->next);
+        printf("%d ", p->data);
+    }
+}
+
+int main()
+{
+    struct Node *temp;
+    int A[] = {3, 5, 7, 10, 25, 8, 32, 2};
+    create(A, 8);
+    Display(first);
     return 0;
 }
