@@ -1,5 +1,7 @@
 #include <stdio.h>
 #include <stdlib.h>
+#include <iostream>
+
 struct Node
 {
     int data;
@@ -24,6 +26,27 @@ void create(int A[], int n)
     }
 }
 
+int countNodes(struct Node *p)
+{
+    int count = 0;
+    while(p != NULL)
+    {
+        count++;
+        p = p->next;
+    }
+    return count;
+}
+
+int countNodeRecursive(struct Node *p)
+{
+    static int count = 0;
+    if(p == NULL)
+        return count;
+    else
+        count++;
+    return countNodeRecursive(p->next);
+}
+
 void Display(struct Node *p)
 {
     while (p != NULL)
@@ -46,7 +69,7 @@ void ReverseDisplay(struct Node *p)
 {
     if (p != NULL)
     {
-        RDisplay(p->next);
+        ReverseDisplay(p->next);
         printf("%d ", p->data);
     }
 }
@@ -57,5 +80,9 @@ int main()
     int A[] = {3, 5, 7, 10, 25, 8, 32, 2};
     create(A, 8);
     Display(first);
+
+    //count iterative and recursive
+    std::cout << countNodes(first);
+    std::cout << countNodeRecursive(first);
     return 0;
 }
