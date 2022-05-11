@@ -47,6 +47,26 @@ int countNodeRecursive(struct Node *p)
     return countNodeRecursive(p->next);
 }
 
+int sumNodes(struct Node *p)
+{
+    static int sum = 0;
+    while(p != NULL)
+    {
+        sum += p->data;
+        p = p-> next; 
+    }
+    return sum;
+}
+
+int sumNodeRecursive(struct Node *p)
+{
+    static int sum = 0;
+    if(p == NULL)
+        return sum;
+    sum += p->data;
+    return sumNodeRecursive(p->next);
+}
+
 void Display(struct Node *p)
 {
     while (p != NULL)
@@ -82,7 +102,11 @@ int main()
     Display(first);
 
     //count iterative and recursive
-    std::cout << countNodes(first);
-    std::cout << countNodeRecursive(first);
+    // std::cout << countNodes(first);
+    // std::cout << countNodeRecursive(first);
+
+    //sum pf all nodes
+    std::cout << sumNodes(first);
+    std::cout << sumNodeRecursive(first);
     return 0;
 }
