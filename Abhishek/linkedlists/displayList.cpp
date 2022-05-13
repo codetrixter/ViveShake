@@ -1,6 +1,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <iostream>
+#include <iomanip>
 
 struct Node
 {
@@ -67,6 +68,27 @@ int sumNodeRecursive(struct Node *p)
     return sumNodeRecursive(p->next);
 }
 
+bool search(struct Node *p, int element)
+{
+    bool found = false;
+    while(p != NULL)
+    {
+        if(p->data == element)
+            found = true;
+        p = p->next;
+    }
+    return found;
+}
+
+bool searchRecursive(struct Node *p, int element)
+{
+    if(p == NULL)
+        return false;
+    else if(p->data == element)
+        return true;
+    return searchRecursive(p->next, element);
+}
+
 void Display(struct Node *p)
 {
     while (p != NULL)
@@ -106,7 +128,12 @@ int main()
     // std::cout << countNodeRecursive(first);
 
     //sum pf all nodes
-    std::cout << sumNodes(first);
-    std::cout << sumNodeRecursive(first);
+    // std::cout << sumNodes(first);
+    // std::cout << sumNodeRecursive(first);
+
+    //searching in a linked list
+    std::cout << std::boolalpha << search(first, 2);
+    std::cout << std::boolalpha << searchRecursive(first, 32);
+
     return 0;
 }
