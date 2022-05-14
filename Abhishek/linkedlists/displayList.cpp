@@ -89,6 +89,52 @@ bool searchRecursive(struct Node *p, int element)
     return searchRecursive(p->next, element);
 }
 
+/**
+ * @brief remove duplicates from a sorted list.
+ * 
+ * @param p 
+ */
+
+void removeDuplicatesSorted(struct Node *p)
+{
+    while(p != NULL)
+    {
+        if(p->next != NULL && p->data == p->next->data)
+        {
+            struct Node *temp = p->next;
+            p->next = p->next->next;
+            free(temp);
+        }  
+        else    
+            p = p->next;
+    }
+}
+
+void reverse(struct Node *p)
+{
+    struct Node *temp = NULL, *prevNode = NULL;
+    while(p != NULL)
+    {
+        prevNode = p;
+        p = p->next;
+        prevNode->next = temp;
+        temp = prevNode;
+    }
+    first = temp;
+}
+
+void reverseRecursive(struct Node *prev, struct Node *curr)
+{
+    static struct Node *temp = NULL, *prevNode = NULL;
+    if(curr != NULL)
+    {
+        reverseRecursive(curr, curr->next);
+        curr->next = prev;
+    }
+    else
+        first  = prev;
+}
+
 void Display(struct Node *p)
 {
     while (p != NULL)
@@ -119,9 +165,11 @@ void ReverseDisplay(struct Node *p)
 int main()
 {
     struct Node *temp;
-    int A[] = {3, 5, 7, 10, 25, 8, 32, 2};
+    int A[] = {10, 20, 20, 20, 30, 30, 40, 50};
+    std::cout <<"****create and display linked list**** \n";
     create(A, 8);
     Display(first);
+    std::cout << "\n";
 
     //count iterative and recursive
     // std::cout << countNodes(first);
@@ -132,8 +180,16 @@ int main()
     // std::cout << sumNodeRecursive(first);
 
     //searching in a linked list
-    std::cout << std::boolalpha << search(first, 2);
-    std::cout << std::boolalpha << searchRecursive(first, 32);
+    // std::cout << std::boolalpha << search(first, 2);
+    // std::cout << std::boolalpha << searchRecursive(first, 32);
 
+    //removiing duplicates from the sorted list.
+    // removeDuplicatesSorted(first);
+    // Display(first);
+
+    std::cout <<"****reversing a linked list using sliding pointer method**** \n";
+    reverseRecursive(NULL, first);
+    Display(first);
+    std::cout << "\n";
     return 0;
 }
