@@ -7,7 +7,7 @@ struct Node
 {
     int data;
     struct Node *next;
-} *first = NULL;
+} *first = NULL, *second = NULL, *MS = NULL;
 
 void create(int A[], int n)
 {
@@ -27,10 +27,28 @@ void create(int A[], int n)
     }
 }
 
+void create2(int A[], int n)
+{
+    int i;
+    struct Node *t, *last;
+    second = (struct Node *)malloc(sizeof(struct Node));
+    second->data = A[0];
+    second->next = NULL;
+    last = second;
+    for (i = 1; i < n; i++)
+    {
+        t = (struct Node *)malloc(sizeof(struct Node));
+        t->data = A[i];
+        t->next = NULL;
+        last->next = t;
+        last = t;
+    }
+}
+
 int countNodes(struct Node *p)
 {
     int count = 0;
-    while(p != NULL)
+    while (p != NULL)
     {
         count++;
         p = p->next;
@@ -41,7 +59,7 @@ int countNodes(struct Node *p)
 int countNodeRecursive(struct Node *p)
 {
     static int count = 0;
-    if(p == NULL)
+    if (p == NULL)
         return count;
     else
         count++;
@@ -51,10 +69,10 @@ int countNodeRecursive(struct Node *p)
 int sumNodes(struct Node *p)
 {
     static int sum = 0;
-    while(p != NULL)
+    while (p != NULL)
     {
         sum += p->data;
-        p = p-> next; 
+        p = p->next;
     }
     return sum;
 }
@@ -62,7 +80,7 @@ int sumNodes(struct Node *p)
 int sumNodeRecursive(struct Node *p)
 {
     static int sum = 0;
-    if(p == NULL)
+    if (p == NULL)
         return sum;
     sum += p->data;
     return sumNodeRecursive(p->next);
@@ -71,9 +89,9 @@ int sumNodeRecursive(struct Node *p)
 bool search(struct Node *p, int element)
 {
     bool found = false;
-    while(p != NULL)
+    while (p != NULL)
     {
-        if(p->data == element)
+        if (p->data == element)
             found = true;
         p = p->next;
     }
@@ -82,30 +100,30 @@ bool search(struct Node *p, int element)
 
 bool searchRecursive(struct Node *p, int element)
 {
-    if(p == NULL)
+    if (p == NULL)
         return false;
-    else if(p->data == element)
+    else if (p->data == element)
         return true;
     return searchRecursive(p->next, element);
 }
 
 /**
  * @brief remove duplicates from a sorted list.
- * 
- * @param p 
+ *
+ * @param p
  */
 
 void removeDuplicatesSorted(struct Node *p)
 {
-    while(p != NULL)
+    while (p != NULL)
     {
-        if(p->next != NULL && p->data == p->next->data)
+        if (p->next != NULL && p->data == p->next->data)
         {
             struct Node *temp = p->next;
             p->next = p->next->next;
             free(temp);
-        }  
-        else    
+        }
+        else
             p = p->next;
     }
 }
@@ -113,7 +131,7 @@ void removeDuplicatesSorted(struct Node *p)
 void reverse(struct Node *p)
 {
     struct Node *temp = NULL, *prevNode = NULL;
-    while(p != NULL)
+    while (p != NULL)
     {
         prevNode = p;
         p = p->next;
@@ -126,13 +144,55 @@ void reverse(struct Node *p)
 void reverseRecursive(struct Node *prev, struct Node *curr)
 {
     static struct Node *temp = NULL, *prevNode = NULL;
-    if(curr != NULL)
+    if (curr != NULL)
     {
         reverseRecursive(curr, curr->next);
         curr->next = prev;
     }
     else
-        first  = prev;
+        first = prev;
+}
+
+void merge(struct Node *first, struct Node *second)
+{
+    struct Node *ML = NULL;
+    if (first->data < second->data)
+    {
+        MS = first;
+        ML = first;
+        first = first->next;
+        ML->next = NULL;
+    }
+    else
+    {
+        MS = second;
+        ML = second;
+        second = second->next;
+        ML->next = NULL;
+    }
+
+    while (first != NULL && second != NULL)
+    {
+        if (first->data < second->data)
+        {
+            ML->next = first;
+            ML = first;
+            first = first->next;
+            ML->next = NULL;
+        }
+        else
+        {
+            ML->next = second;
+            ML = second;
+            second = second->next;
+            ML->next = NULL;
+        }
+    }
+
+    if (first != NULL)
+        ML->next = first;
+    else
+        ML->next = second;
 }
 
 void Display(struct Node *p)
@@ -146,7 +206,7 @@ void Display(struct Node *p)
 
 void RecursiveDisplay(struct Node *p)
 {
-    if(p != NULL)
+    if (p != NULL)
     {
         printf("%d", p->data);
         RecursiveDisplay(p->next);
@@ -165,31 +225,38 @@ void ReverseDisplay(struct Node *p)
 int main()
 {
     struct Node *temp;
-    int A[] = {10, 20, 20, 20, 30, 30, 40, 50};
-    std::cout <<"****create and display linked list**** \n";
-    create(A, 8);
+    int A[] = {2, 8, 10, 15};
+    int B[] = {4, 7, 12, 14, 17, 20};
+    std::cout << "****create and display linked list**** \n";
+    create(A, 4);
+    create2(B, 6);
     Display(first);
     std::cout << "\n";
 
-    //count iterative and recursive
-    // std::cout << countNodes(first);
-    // std::cout << countNodeRecursive(first);
+    // count iterative and recursive
+    //  std::cout << countNodes(first);
+    //  std::cout << countNodeRecursive(first);
 
-    //sum pf all nodes
-    // std::cout << sumNodes(first);
-    // std::cout << sumNodeRecursive(first);
+    // sum pf all nodes
+    //  std::cout << sumNodes(first);
+    //  std::cout << sumNodeRecursive(first);
 
-    //searching in a linked list
-    // std::cout << std::boolalpha << search(first, 2);
-    // std::cout << std::boolalpha << searchRecursive(first, 32);
+    // searching in a linked list
+    //  std::cout << std::boolalpha << search(first, 2);
+    //  std::cout << std::boolalpha << searchRecursive(first, 32);
 
-    //removiing duplicates from the sorted list.
-    // removeDuplicatesSorted(first);
+    // removiing duplicates from the sorted list.
+    //  removeDuplicatesSorted(first);
+    //  Display(first);
+
+    // std::cout <<"****reversing a linked list using sliding pointer method**** \n";
+    // reverseRecursive(NULL, first);
     // Display(first);
+    // std::cout << "\n";
 
-    std::cout <<"****reversing a linked list using sliding pointer method**** \n";
-    reverseRecursive(NULL, first);
-    Display(first);
-    std::cout << "\n";
+    std::cout << "****merging a singly linked list**** \n";
+    merge(first, second);
+    Display(MS);
+
     return 0;
 }
