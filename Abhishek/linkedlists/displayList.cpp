@@ -153,6 +153,19 @@ void reverseRecursive(struct Node *prev, struct Node *curr)
         first = prev;
 }
 
+struct Node* concatenate(struct Node *first, struct Node *second)
+{
+    struct Node *temp = first;
+    while(temp->next != NULL)
+    {
+        temp = temp->next;
+    }
+
+    temp->next = second;
+
+    return first;
+}
+
 void merge(struct Node *first, struct Node *second)
 {
     struct Node *ML = NULL;
@@ -254,9 +267,11 @@ int main()
     // Display(first);
     // std::cout << "\n";
 
-    std::cout << "****merging a singly linked list**** \n";
-    merge(first, second);
-    Display(MS);
+    // std::cout << "****merging a singly linked list**** \n";
+    // merge(first, second);
+    // Display(MS);
 
+    std::cout << "****concatenating two singly linked list**** \n";
+    Display(concatenate(first, second));
     return 0;
 }
