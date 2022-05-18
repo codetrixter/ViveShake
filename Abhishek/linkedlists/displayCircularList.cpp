@@ -37,6 +37,23 @@ void create(int *A, int size)
     }
 }
 
+void insertAtBeg(struct Node *p, int element)
+{
+    struct Node *temp, *it;
+    temp = (struct Node*)malloc(sizeof(struct Node));
+    temp->data = element;
+    it = p;
+
+    while(it->next != p)
+    {
+        it = it->next;
+    }
+    it->next = temp;
+
+    temp->next = p;
+    p = temp;
+}
+
 void display(struct Node *start)
 {
     struct Node *temp = start;
@@ -47,6 +64,8 @@ void display(struct Node *start)
     }
     if(temp->next = start)
         std::cout << temp->data;
+
+    std::cout << "\n";
 }
 
 struct Node* displayRecursive(struct Node * start)
@@ -54,6 +73,7 @@ struct Node* displayRecursive(struct Node * start)
     if(start->next == first)
     {
         std::cout << start->data;
+        std::cout << "\n";
         return start;
     }
     else
@@ -68,5 +88,9 @@ int main(int argc, char const *argv[])
     int A[] = {10, 30, 2, 50, 1};
     create(A, 5);
     displayRecursive(first);
+
+    std::cout << "****insertion at beginning**** \n";
+    insertAtBeg(first, 256);
+    display(first);
     return 0;
 }
