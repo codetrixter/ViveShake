@@ -55,6 +55,24 @@ void insertAtBeg(struct Node *head, int element)
     first = head;
 }
 
+void deleteFromMid(struct Node *head, int element)
+{
+    struct Node *it = head;
+    while(it->next != head)
+    {
+        if(head->data == element && it == head)
+        {
+            head = head->next;
+        }
+        else if(it->next->data == element)
+        {
+            it->next = it->next->next;
+        }
+        else
+            it = it->next;
+    }
+}
+
 void DisplayInC(struct Node *h)
 {
     do
@@ -99,8 +117,12 @@ int main(int argc, char const *argv[])
     create(A, 5);
     displayRecursive(first);
 
-    std::cout << "****insertion at beginning**** \n";
-    insertAtBeg(first, 256);
+    // std::cout << "****insertion at beginning**** \n";
+    // insertAtBeg(first, 256);
+    // display(first);
+
+    std::cout << "****deletion from mid**** \n";
+    deleteFromMid(first, 1);
     display(first);
     return 0;
 }
