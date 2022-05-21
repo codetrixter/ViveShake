@@ -52,6 +52,24 @@ void display(struct Node *start)
     std::cout << "\n";
 }
 
+void insertAtMid(struct Node *start, int element)
+{
+    struct Node *it = start;
+    struct Node *newNode = (struct Node *)malloc(sizeof(struct Node));
+    newNode->data = element;
+    while(it != NULL)
+    {
+        if(it->data == element)
+        {
+            newNode->prev = it->prev;
+            newNode->next = it;
+            it->prev->next = newNode; 
+            it->prev = newNode;
+            break;
+        }
+    }
+}
+
 void displayReverse(struct Node *start)
 {
     struct Node *temp = start;
@@ -72,6 +90,10 @@ int main(int argc, char const *argv[])
     int A[] = {10, 30, 2, 50, 1};
     create(A, 5);
     display(first);
-    displayReverse(first);
+    //displayReverse(first);
+
+    //insert at middle
+    insertAtMid(first, 2);
+    display(first);
     return 0;
 }
