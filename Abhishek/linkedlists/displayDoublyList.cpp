@@ -77,6 +77,35 @@ void insert(struct Node *start, int pos)
     }
 }
 
+void deleteNode(struct Node *start, int pos)
+{
+    int count = 1;
+    
+    while(start != NULL)
+    {
+        if(pos == 1)
+        {
+            start = start->next;
+            start->prev = NULL;
+            first = start;
+            break;
+        }
+        else if(count == pos)
+        {
+            if(start->next == NULL)
+                start->prev->next = NULL;
+            else
+            {
+                start->prev->next = start->next;
+                start->next->prev = start->prev;
+            }
+            break;
+        }
+        count++;
+        start = start->next;
+    }
+}
+
 void displayReverse(struct Node *start)
 {
     struct Node *temp = start;
@@ -100,7 +129,11 @@ int main(int argc, char const *argv[])
     //displayReverse(first);
 
     //insert at middle
-    insert(first, 2);
+    // insert(first, 2);
+    // display(first);
+
+    //delete from a doubly linked list
+    deleteNode(first, 5);
     display(first);
     return 0;
 }
