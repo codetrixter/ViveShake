@@ -52,20 +52,27 @@ void display(struct Node *start)
     std::cout << "\n";
 }
 
-void insertAtMid(struct Node *start, int element)
+void insert(struct Node *start, int pos)
 {
     struct Node *it = start;
+    int count = 1;
     struct Node *newNode = (struct Node *)malloc(sizeof(struct Node));
-    newNode->data = element;
+    newNode->data = 1000;
+
     while(it != NULL)
     {
-        if(it->data == element)
+        if(count == pos)
         {
             newNode->prev = it->prev;
             newNode->next = it;
             it->prev->next = newNode; 
             it->prev = newNode;
             break;
+        }
+        else
+        {
+            count++;
+            it = it->next;
         }
     }
 }
@@ -93,7 +100,7 @@ int main(int argc, char const *argv[])
     //displayReverse(first);
 
     //insert at middle
-    insertAtMid(first, 2);
+    insert(first, 2);
     display(first);
     return 0;
 }
