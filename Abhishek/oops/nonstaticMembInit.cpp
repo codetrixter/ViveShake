@@ -14,6 +14,7 @@
 class square
 {
     private:
+    //non static member initializer list.
     int val_a{ 10 };
     int val_b{ 20 };    //brace init
     int val_d = 40;     //copy initi
