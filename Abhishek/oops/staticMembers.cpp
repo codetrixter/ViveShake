@@ -50,4 +50,9 @@ class Whatever
 public:
     static inline int s_value{ 4 }; // a static inline int can be declared and initialized directly (C++17)
 };
+int main(int argc, char const *argv[])
+{
+    return 0;
+}
+
 //*************************
