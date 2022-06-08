@@ -1,19 +1,19 @@
 public class UglyNum1 {
     public static void main(String[] args) {
+        // first 15 ugly no.s
+        for (int i = 1; i <= 15; i++)
+            System.out.print(getNthUglyNum(i) + " ");
 
-        //first 15 ugly no.s
-        for(int i = 1; i <= 15; i++)
-        System.out.print(getNthUglyNum(i)+", ");
-        
+        System.out.println(getNthUglyNum(150));
     }
 
     private static int getNthUglyNum(int n) {
         int i = 1;
         int count = 1;
 
-        while(n > count) {
+        while (n > count) {
             i++;
-            if(isUglyNum(i)) {
+            if (isUglyNum(i)) {
                 count++;
             }
         }
@@ -28,8 +28,8 @@ public class UglyNum1 {
     }
 
     private static int maxDivide(int num, int digit) {
-        while(num % digit == 0)
-            num = num/digit;
+        while (num % digit == 0)
+            num = num / digit;
         return num;
     }
 }
