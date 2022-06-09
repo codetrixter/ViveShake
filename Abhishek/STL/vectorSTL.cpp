@@ -52,7 +52,7 @@
 //***************traversing the vector
 
 //***************exploring capcity functions of vector
-int main(int argc, char const *argv[])
+/* int main(int argc, char const *argv[])
 {
     std::vector<int> lVect;
 
@@ -84,8 +84,36 @@ int main(int argc, char const *argv[])
     
     //resize(n)-> it requests the vector capacity to be at least enough to accomodate n elements.
     return 0;
-}
+} */
 
 //***************exploring capcity functions of vector
 
+//***************exploring element access functions of vector
+int main(int argc, char const *argv[])
+{
+    std::vector<int> lVect;
+
+    for(int i = 1; i < 10; ++i)
+        lVect.push_back(i*10);
+    
+    //reference operator[]
+    std::cout << "\n Reference operator [x]: lVect[2]" << lVect[2];
+
+    //at(x)->returns rference to the element at x position in the vector
+    std::cout << "\n at(x): lVect.at(3) " << lVect.at(3);
+
+    //front()-> returns the reference of the first element
+    std::cout << "\n front(): " << lVect.front();
+
+    //back()->returns the reference to the last element.
+    std::cout << "\n back(): " << lVect.back();
+
+    //data()->returns the direct pointer to the memory array used to store its own elements.
+    int *ptr = lVect.data();
+    std::cout << "\n data(): " << *ptr;
+
+    return 0;
+}
+
+//***************exploring element access functions of vector
 
