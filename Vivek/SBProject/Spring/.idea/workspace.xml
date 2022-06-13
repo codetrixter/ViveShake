@@ -5,10 +5,10 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="f5e6808b-0622-4cb4-9ce7-be2612e4acd8" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/Example3/pom.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Example3/src/main/java/com/chakrawaat/bean/Vehicle.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Example3/src/main/java/com/chakrawaat/config/ProjectConfig.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Example3/src/main/java/com/chakrawaat/main/Example3Main.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Example5/pom.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Example5/src/main/java/com/chakrawaat/beans/Vehicle.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Example5/src/main/java/com/chakrawaat/config/ProjectConfig.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Example5/src/main/java/com/chakrawaat/main/Example5Main.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
     </list>
@@ -44,7 +44,7 @@
     &quot;settings.editor.selected.configurable&quot;: &quot;MavenSettings&quot;
   }
 }</component>
-  <component name="RunManager" selected="Application.Example3Main">
+  <component name="RunManager" selected="Application.Example5Main">
     <configuration name="Example1Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="com.example1.Example1Main" />
       <module name="Spring" />
@@ -84,8 +84,36 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="Example4Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="com.chakrawaat.four.main.Example4Main" />
+      <module name="Example4" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.chakrawaat.four.main.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="Example5Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="com.chakrawaat.main.Example5Main" />
+      <module name="Example5" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.chakrawaat.main.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Application.Example5Main" />
+        <item itemvalue="Application.Example4Main" />
         <item itemvalue="Application.Example3Main" />
         <item itemvalue="Application.Example2Main" />
         <item itemvalue="Application.Example1Main" />
