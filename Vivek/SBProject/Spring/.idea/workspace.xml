@@ -5,18 +5,12 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="f5e6808b-0622-4cb4-9ce7-be2612e4acd8" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/.gitignore" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Example2/pom.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Example2/src/main/java/com/vivek/eazybytes/beans/Vehicle.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Example2/src/main/java/com/vivek/eazybytes/config/ProjectConfig.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Example2/src/main/java/com/vivek/eazybytes/main/Example2Main.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/example1/Example1Main.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/example1/Vehicle.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/example1/config/ProjectConfiguration.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Example3/pom.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Example3/src/main/java/com/chakrawaat/bean/Vehicle.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Example3/src/main/java/com/chakrawaat/config/ProjectConfig.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Example3/src/main/java/com/chakrawaat/main/Example3Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -31,7 +25,7 @@
     </option>
   </component>
   <component name="Git.Settings">
-    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/../../.." />
   </component>
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
@@ -42,15 +36,15 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "jdk.selected.JAVA_MODULE": "11",
-    "settings.editor.selected.configurable": "MavenSettings"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;jdk.selected.JAVA_MODULE&quot;: &quot;11&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;MavenSettings&quot;
   }
-}]]></component>
-  <component name="RunManager" selected="Application.Example2Main">
+}</component>
+  <component name="RunManager" selected="Application.Example3Main">
     <configuration name="Example1Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="com.example1.Example1Main" />
       <module name="Spring" />
@@ -77,8 +71,22 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="Example3Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="com.chakrawaat.main.Example3Main" />
+      <module name="Example3" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.chakrawaat.main.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Application.Example3Main" />
         <item itemvalue="Application.Example2Main" />
         <item itemvalue="Application.Example1Main" />
       </list>
