@@ -5,8 +5,13 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="f5e6808b-0622-4cb4-9ce7-be2612e4acd8" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/Example6/src/main/java/com/chakrawaat/six/beans/Vehicle.java" beforeDir="false" afterPath="$PROJECT_DIR$/Example6/src/main/java/com/chakrawaat/six/beans/Vehicle.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Example6/src/main/java/com/chakrawaat/six/main/Example6Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/Example6/src/main/java/com/chakrawaat/six/main/Example6Main.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Example7/pom.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Example7/src/main/java/com/chakrawaat/seven/beans/Vehicle.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Example7/src/main/java/com/chakrawaat/seven/config/ProjectConfig.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Example7/src/main/java/com/chakrawaat/seven/main/Example7Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -40,20 +45,7 @@
     &quot;settings.editor.selected.configurable&quot;: &quot;MavenSettings&quot;
   }
 }</component>
-  <component name="RunManager" selected="Application.Example6Main">
-    <configuration name="Example2Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="com.vivek.eazybytes.main.Example2Main" />
-      <module name="Example2" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="com.vivek.eazybytes.main.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
+  <component name="RunManager" selected="Application.Example7Main">
     <configuration name="Example3Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="com.chakrawaat.main.Example3Main" />
       <module name="Example3" />
@@ -106,13 +98,26 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="Example7Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="com.chakrawaat.seven.main.Example7Main" />
+      <module name="Example7" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.chakrawaat.seven.main.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Application.Example7Main" />
         <item itemvalue="Application.Example6Main" />
         <item itemvalue="Application.Example5Main" />
         <item itemvalue="Application.Example4Main" />
         <item itemvalue="Application.Example3Main" />
-        <item itemvalue="Application.Example2Main" />
       </list>
     </recent_temporary>
   </component>
