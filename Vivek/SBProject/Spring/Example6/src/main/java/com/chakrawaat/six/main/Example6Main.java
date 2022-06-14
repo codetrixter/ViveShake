@@ -10,5 +10,11 @@ public class Example6Main {
         var vehicle = context.getBean(Vehicle.class);
         System.out.println("Name of the vehicle after postConstruct: "+vehicle.getName());
         vehicle.printHello();
+        try {
+            Thread.sleep(3000);
+        } catch (InterruptedException e) {
+            throw new RuntimeException(e);
+        }
+        context.close();
     }
 }
