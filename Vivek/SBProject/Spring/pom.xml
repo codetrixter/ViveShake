@@ -13,6 +13,7 @@
         <module>Example3</module>
         <module>Example4</module>
         <module>Example5</module>
+        <module>Example6</module>
     </modules>
 
     <properties>
