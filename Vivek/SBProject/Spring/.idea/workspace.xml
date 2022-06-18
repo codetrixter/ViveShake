@@ -5,12 +5,11 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="f5e6808b-0622-4cb4-9ce7-be2612e4acd8" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/Example9/pom.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Example9/src/main/java/com/chakrawaat/nine/beans/Person.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Example9/src/main/java/com/chakrawaat/nine/beans/Vehicle.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Example9/src/main/java/com/chakrawaat/nine/config/ProjectConfig.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Example9/src/main/java/com/chakrawaat/nine/main/Example9Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Example10/pom.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Example10/src/main/java/com/chakrawaat/ten/beans/Person.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Example10/src/main/java/com/chakrawaat/ten/beans/Vehicle.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Example10/src/main/java/com/chakrawaat/ten/config/ProjectConfig.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Example10/src/main/java/com/chakrawaat/ten/main/Example10Main.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -45,13 +44,13 @@
     &quot;settings.editor.selected.configurable&quot;: &quot;MavenSettings&quot;
   }
 }</component>
-  <component name="RunManager" selected="Application.Example9Main">
-    <configuration name="Example5Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="com.chakrawaat.main.Example5Main" />
-      <module name="Example5" />
+  <component name="RunManager" selected="Application.Example10Main">
+    <configuration name="Example10Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="com.chakrawaat.ten.main.Example10Main" />
+      <module name="Example10" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="com.chakrawaat.main.*" />
+          <option name="PATTERN" value="com.chakrawaat.ten.main.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -113,11 +112,11 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Application.Example10Main" />
         <item itemvalue="Application.Example9Main" />
         <item itemvalue="Application.Example8Main" />
         <item itemvalue="Application.Example7Main" />
         <item itemvalue="Application.Example6Main" />
-        <item itemvalue="Application.Example5Main" />
       </list>
     </recent_temporary>
   </component>
