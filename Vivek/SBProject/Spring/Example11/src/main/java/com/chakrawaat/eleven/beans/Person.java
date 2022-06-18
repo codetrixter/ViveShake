@@ -7,7 +7,9 @@ import org.springframework.stereotype.Component;
 public class Person {
 
     private String name = "Vivek";
-    @Autowired
+
+    /*similar thing can be achived by removeing @Autowired from here and moving to setVehicle() */
+    /*@Autowired*/
     private Vehicle vehicle;
 
     public Person() {
@@ -24,5 +26,11 @@ public class Person {
 
     public Vehicle getVehicle() {
         return vehicle;
+    }
+
+    @Autowired
+    public void setVehicle(Vehicle vehicle) {
+        System.out.println("setVehicle() of person is called : "+vehicle);
+        this.vehicle = vehicle;
     }
 }

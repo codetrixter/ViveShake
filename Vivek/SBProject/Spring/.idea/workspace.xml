@@ -5,16 +5,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="f5e6808b-0622-4cb4-9ce7-be2612e4acd8" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Example10.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Example11/pom.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Example11/src/main/java/com/chakrawaat/eleven/beans/Person.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Example11/src/main/java/com/chakrawaat/eleven/beans/Vehicle.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Example11/src/main/java/com/chakrawaat/eleven/config/ProjectConfig.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Example11/src/main/java/com/chakrawaat/eleven/main/Example11Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Example11/src/main/java/com/chakrawaat/eleven/beans/Person.java" beforeDir="false" afterPath="$PROJECT_DIR$/Example11/src/main/java/com/chakrawaat/eleven/beans/Person.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
