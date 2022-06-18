@@ -14,7 +14,7 @@
 #include <forward_list>
 
 //*****************assign()***
-int main(int argc, char const *argv[])
+/* int main(int argc, char const *argv[])
 {
     std::forward_list<int> fList1;
     std::forward_list<int> fList2;
@@ -42,5 +42,48 @@ int main(int argc, char const *argv[])
     std::cout << std::endl;
 
     return 0;
-}
+} */
 //*****************assign()***
+
+//*****************push_front(), emplace_front() and pop_frot()***
+int main(int argc, char const *argv[])
+{
+    std::forward_list<int> fList {1, 2, 3, 4, 5, 6};
+
+    std::cout << "The list initialized: ";
+    for(auto i: fList)
+    {
+        std::cout << i << " ";
+    }
+    std::cout << std::endl;
+
+    //pushing the element to the stsr of the list
+    fList.push_front(60);
+    std::cout << "The list after push_front: ";
+    for(auto i: fList)
+    {
+        std::cout << i << " ";
+    }
+    std::cout << std::endl;
+
+    //puhses element to the front of the lsit without copy.
+    fList.emplace_front(70);
+    std::cout << "The list afteremplace_front: ";
+    for(auto i: fList)
+    {
+        std::cout << i << " ";
+    }
+    std::cout << std::endl;
+
+    //deletes first element of the list.
+    fList.pop_front();
+    std::cout << "The list after pop_front: ";
+    for(auto i: fList)
+    {
+        std::cout << i << " ";
+    }
+    std::cout << std::endl;
+    return 0;
+}
+
+//*****************push_front(), emplace_front() and pop_frot()***
