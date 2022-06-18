@@ -16,6 +16,10 @@
         <module>Example6</module>
         <module>Example7</module>
         <module>Example8</module>
+        <module>Example9</module>
+        <module>Example10</module>
+        <module>Example11</module>
+        <module>Example11/Example11_2</module>
     </modules>
 
     <properties>
