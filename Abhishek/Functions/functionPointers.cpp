@@ -13,6 +13,7 @@
  * 5- passing functions as argumenst to other functions AKA callback functions.
  *  a--> we can using type aliases by "using" for making function pointers definitions less ugly.
  * 6- std::function<> can also be used to define function pointers.
+ * 7- Quiz.
  * @version 0.1
  * @date 2022-06-18
  * 
@@ -134,7 +135,7 @@ int main()
 //*********point 5***
 
 //*********point 6***
-#include <functional>
+/* #include <functional>
 
 int foo()
 {
@@ -153,5 +154,58 @@ int main(int argc, char const *argv[])
     std::function<int(int, int)> funptr2 = &goo;
     std::cout << funptr2(10, 20);
     return 0;
-}
+} */
 //*********point 6***
+//*********QUIZ***
+#include <functional>
+
+using ArithmaticFunction = std::function<int(int, int)>;
+
+int add(int x, int y)
+{
+    return x+y;
+}
+
+int sub(int x, int y)
+{
+   return x-y; 
+}
+
+int mul(int x, int y)
+{
+    return x*y;
+}
+
+int division(int x, int y)
+{
+    return x/y;
+}
+
+ArithmaticFunction getArithmaticFunction(char operation)
+{
+    if(operation == '+')
+        return &add;
+    else if(operation == '-')
+        return &sub;
+    else if(operation == '*')
+        return &mul;
+    else if(operation == '/')
+        return &division;
+    else
+        return nullptr;
+}
+int main(int argc, char const *argv[])
+{
+    int val1, val2;
+    char op;
+    std::cout << "Enter two numbers: ";
+    std::cin >> val1 >> val2;
+    std::cout << "enter the operation you want to perform on the given numbers: ";
+    std::cin >> op;
+
+    ArithmaticFunction funTemp = getArithmaticFunction(op);
+    std::cout << funTemp(val1, val2);
+    return 0;
+}
+
+//*********QUIZ***
