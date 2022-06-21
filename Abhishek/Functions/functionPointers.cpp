@@ -11,6 +11,9 @@
  * 3- Assigning a function to a function pointer.
  * 4- Calling functions using function pointer.
  * 5- passing functions as argumenst to other functions AKA callback functions.
+ *  a--> we can using type aliases by "using" for making function pointers definitions less ugly.
+ * 6- std::function<> can also be used to define function pointers.
+ * 7- Quiz.
  * @version 0.1
  * @date 2022-06-18
  * 
@@ -19,6 +22,7 @@
  */
 #include <iostream>
 #include <utility>
+
 
 //*********point 1***
 /* int foo()   //code for foo starts at memory address 0x002717f0
@@ -59,8 +63,27 @@ int main(int argc, char const *argv[])
 //*********point 3 and 4***
 
 //*********point 5***
-// Note our user-defined comparison is the third parameter
-void selectionSort(int* array, int size, bool (*comparisonFcn)(int, int))
+
+/* // Here is a comparison function that sorts in ascending order
+// (Note: it's exactly the same as the previous ascending() function)
+bool ascending(int x, int y)
+{
+    return x > y; // swap if the first element is greater than the second
+}
+
+// Here is a comparison function that sorts in descending order
+bool descending(int x, int y)
+{
+    return x < y; // swap if the second element is greater than the first
+}
+
+//we can use using for making function pointers pretier.
+using validateFunction = bool (*)(int, int);
+
+// Note our user-defined comparison is the third parameter, which can also be given as default parameter.
+
+//void selectionSort(int* array, int size, bool (*comaparatorFun)(int, int) = ascending)
+void selectionSort(int* array, int size, validateFunction pfun = ascending)
 {
     // Step through each element of the array
     for (int startIndex{ 0 }; startIndex < (size - 1); ++startIndex)
@@ -72,7 +95,7 @@ void selectionSort(int* array, int size, bool (*comparisonFcn)(int, int))
         for (int currentIndex{ startIndex + 1 }; currentIndex < size; ++currentIndex)
         {
             // If the current element is smaller/larger than our previously found smallest
-            if (comparisonFcn(array[bestIndex], array[currentIndex])) // COMPARISON DONE HERE
+            if (pfun(array[bestIndex], array[currentIndex])) // COMPARISON DONE HERE
             {
                 // This is the new smallest/largest number for this iteration
                 bestIndex = currentIndex;
@@ -82,19 +105,6 @@ void selectionSort(int* array, int size, bool (*comparisonFcn)(int, int))
         // Swap our start element with our smallest/largest element
         std::swap(array[startIndex], array[bestIndex]);
     }
-}
-
-// Here is a comparison function that sorts in ascending order
-// (Note: it's exactly the same as the previous ascending() function)
-bool ascending(int x, int y)
-{
-    return x > y; // swap if the first element is greater than the second
-}
-
-// Here is a comparison function that sorts in descending order
-bool descending(int x, int y)
-{
-    return x < y; // swap if the second element is greater than the first
 }
 
 // This function prints out the values in the array
@@ -121,6 +131,85 @@ int main()
     printArray(array, 9);
 
     return 0;
+} */
+//*********point 5***
+
+//*********point 6***
+/* #include <functional>
+
+int foo()
+{
+    return 5;
 }
 
-//*********point 5***
+int goo(int a, int b)
+{
+    return a+b;
+}
+int main(int argc, char const *argv[])
+{
+    std::function<int()> funptr1{&foo};
+    std::cout << funptr1();
+
+    std::function<int(int, int)> funptr2 = &goo;
+    std::cout << funptr2(10, 20);
+    return 0;
+} */
+//*********point 6***
+//*********QUIZ***
+#include <functional>
+
+using ArithmaticFunction = std::function<int(int, int)>;
+
+int add(int x, int y)
+{
+    return x+y;
+}
+
+int sub(int x, int y)
+{
+   return x-y; 
+}
+
+int mul(int x, int y)
+{
+    return x*y;
+}
+
+int division(int x, int y)
+{
+    return x/y;
+}
+
+ArithmaticFunction getArithmaticFunction(char operation)
+{
+    if(operation == '+')
+        return &add;
+    else if(operation == '-')
+        return &sub;
+    else if(operation == '*')
+        return &mul;
+    else if(operation == '/')
+        return &division;
+    else
+        return nullptr;
+}
+int main(int argc, char const *argv[])
+{
+    int val1, val2;
+    char op;
+    std::cout << "Enter two numbers: ";
+    std::cin >> val1 >> val2;
+    
+    do 
+    {
+        std::cout << "enter the operation you want to perform on the given numbers: ";
+        std::cin >> op; 
+    }while(op != '+' && op != '-' && op != '*' && op != '/');   //checking for any other input other than 4 operations
+
+    ArithmaticFunction funTemp = getArithmaticFunction(op);
+    std::cout << funTemp(val1, val2);
+    return 0;
+}
+
+//*********QUIZ***
