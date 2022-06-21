@@ -22,6 +22,7 @@
         <module>Example11/Example11_2</module>
         <module>Example12</module>
         <module>FirstAssignment</module>
+        <module>Example14</module>
     </modules>
 
     <properties>
