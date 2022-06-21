@@ -200,8 +200,12 @@ int main(int argc, char const *argv[])
     char op;
     std::cout << "Enter two numbers: ";
     std::cin >> val1 >> val2;
-    std::cout << "enter the operation you want to perform on the given numbers: ";
-    std::cin >> op;
+    
+    do 
+    {
+        std::cout << "enter the operation you want to perform on the given numbers: ";
+        std::cin >> op; 
+    }while(op != '+' && op != '-' && op != '*' && op != '/');   //checking for any other input other than 4 operations
 
     ArithmaticFunction funTemp = getArithmaticFunction(op);
     std::cout << funTemp(val1, val2);
