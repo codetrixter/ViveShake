@@ -20,6 +20,7 @@
         <module>Example10</module>
         <module>Example11</module>
         <module>Example11/Example11_2</module>
+        <module>Example12</module>
     </modules>
 
     <properties>
