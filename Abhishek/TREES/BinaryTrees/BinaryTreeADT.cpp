@@ -11,12 +11,14 @@
 
 #include <iostream>
 #include <queue>
+#include <stack>
 
 struct Node
 {
     struct Node* lchild;
     int data;
     struct Node* rchild; 
+    bool fromleft = true;
 }*root = NULL;
 
 void createBT()
@@ -78,12 +80,116 @@ void preOrderTraversal(struct Node* node)
     }
 }
 
+void iterativePreorderTraversal(struct Node* node)
+{
+    std::stack<struct Node*> buff;
+
+    while((node != NULL) || (!buff.empty()))
+    {
+        if(node)
+        {
+            std::cout << node->data << " ";
+            buff.push(node);
+            node = node->lchild;
+        }
+        else
+        {
+            node = buff.top();
+            buff.pop();
+            node = node->rchild;
+        }
+    }
+}
+
+void iterativeInorderTraversal(struct Node* node)
+{
+    std::stack<struct Node*> buff;
+
+    while((node != NULL) || (!buff.empty()))
+    {
+        if(node)
+        {
+            buff.push(node);
+            node = node->lchild;
+        }
+        else
+        {
+            node = buff.top();
+            buff.pop();
+            std::cout << node->data << " ";
+            node = node->rchild;
+        }
+    }
+}
+
+//using 2 stack method of GeeksForGeeks
+void iterativePostorderTraversal(struct Node* node)
+{
+    std::stack<struct Node*> buff1, buff2;
+    buff1.push(node);
+
+    while(!buff1.empty())
+    {
+        //pushing stack 1 elements to stack 2
+        buff2.push(buff1.top());
+        buff1.pop();
+
+        //pushing stack 2's left and right child's in stack 1
+        if(buff2.top()->lchild)
+            buff1.push(buff2.top()->lchild);
+        if(buff2.top()->rchild)
+            buff1.push(buff2.top()->rchild);
+    }
+
+    while(!buff2.empty())
+    {
+        std::cout << buff2.top()->data << " ";
+        buff2.pop();
+    }
+}
+
+//it is the same way we did the BT creation
+void levelOrderTraversal(struct Node* node)
+{
+    std::queue<struct Node*> buffer;
+    if(node)
+        buffer.push(node);
+    else
+        return;
+        
+    while(!buffer.empty())
+    {
+        //pop root from the queue and print it
+        auto temp = buffer.front();
+        buffer.pop();
+        std::cout << temp->data << " ";
+
+        //push left and right childs back into queue.
+        if(temp->lchild)
+            buffer.push(temp->lchild);
+        if(temp->rchild)
+        buffer.push(temp->rchild);
+    }
+}
+
 int main(int argc, char const *argv[])
 {
     //creates a Binary Tree by taking node informations as command line arguments.
     createBT();
     //prints the data of Binary Tree using preOrder traversal technique.
-    preOrderTraversal(root);
+    //preOrderTraversal(root);
+
+    //Iterative preorder traversal of Binary tree
+    //iterativePreorderTraversal(root);
+
+    //Iterative In order traversal of Binary tree.
+    //iterativeInorderTraversal(root);
+
+    //Iterative post order binary tree traversal, using 2 stack method
+    //iterativePostorderTraversal(root);
+
+    //Iterative level order traversal of Binary tree.
+    levelOrderTraversal(root);
 
     return 0;
 }
