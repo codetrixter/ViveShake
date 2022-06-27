@@ -156,7 +156,7 @@ void levelOrderTraversal(struct Node* node)
         buffer.push(node);
     else
         return;
-        
+
     while(!buffer.empty())
     {
         //pop root from the queue and print it
@@ -170,6 +170,35 @@ void levelOrderTraversal(struct Node* node)
         if(temp->rchild)
         buffer.push(temp->rchild);
     }
+}
+
+int countNodes(struct Node* node)
+{
+    int x, y;
+    if(node == NULL)
+        return 0;
+    else
+    {
+        x = countNodes(node->lchild);
+        y = countNodes(node->rchild);
+        return x + y + 1;
+    } 
+}
+
+int mystrey(struct Node* node)
+{
+    int x = 0, y = 0;
+    if(node == NULL)
+        return 0;
+    else
+    {
+        x = mystrey(node->lchild);
+        y = mystrey(node->rchild);
+        if(x > y)
+            return x+1;
+        else
+            return y+1;
+    } 
 }
 
 int main(int argc, char const *argv[])
@@ -189,7 +218,13 @@ int main(int argc, char const *argv[])
     //iterativePostorderTraversal(root);
 
     //Iterative level order traversal of Binary tree.
-    levelOrderTraversal(root);
+    //levelOrderTraversal(root);
+
+    //count the number of nodes in a binary tree.
+    //std::cout << countNodes(root);
+
+    //finding what this does.
+    std::cout << mystrey(root);
 
     return 0;
 }
