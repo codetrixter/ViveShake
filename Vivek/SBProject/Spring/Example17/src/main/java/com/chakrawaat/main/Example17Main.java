@@ -9,6 +9,9 @@ public class Example17Main {
     public static void main(String[] args) {
         var context = new AnnotationConfigApplicationContext(ProjectConfig.class);
         var veh = context.getBean(Vehicle.class);
-        veh.rotate();
+        boolean isVehicleStarted = true;
+        veh.rotate(isVehicleStarted);
+        veh.playMusic(isVehicleStarted);
+        veh.stopVehicle(isVehicleStarted);
     }
 }
