@@ -1,5 +1,6 @@
 package com.chakrawaat.beans;
 
+import com.chakrawaat.interfaces.LogAspect;
 import org.springframework.stereotype.Component;
 
 @Component
@@ -15,6 +16,7 @@ public class Vehicle {
         return name;
     }
 
+    @LogAspect
     public String rotate(boolean isVehicleStarted) {
         if (isVehicleStarted) return "||||||||Vehicle started !!!!!!!!!!!!!!!!!!!!!";
         else return "";

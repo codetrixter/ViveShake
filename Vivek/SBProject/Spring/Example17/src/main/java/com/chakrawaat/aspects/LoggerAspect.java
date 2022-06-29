@@ -33,6 +33,17 @@ public class LoggerAspect {
         logger.info(joinPoint.getSignature().toString()+ "method execution end");
     }
 
+    @Around("@annotation(com.chakrawaat.interfaces.LogAspect)")
+    public void logWithAnnotation(ProceedingJoinPoint joinPoint) throws Throwable {
+        logger.info(joinPoint.toString() + "||......... annotation method started ................");
+        Instant start = Instant.now();
+        joinPoint.proceed();
+        Instant finish = Instant.now();
+        long timeElapsed = Duration.between(start, finish).toMillis();
+        logger.info("Total time took in execution: "+timeElapsed);
+        logger.info(joinPoint.getSignature().toString() + "........method execution end..................||");
+    }
+
     @AfterThrowing(value = "execution(* com.chakrawaat.beans.*.*(..))", throwing = "exec")
     public void logException(JoinPoint joinPoint, Exception exec) {
         logger.log(Level.SEVERE, joinPoint.getSignature()+ " An exception thrown with the help of"+
