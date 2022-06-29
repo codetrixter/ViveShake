@@ -15,24 +15,19 @@ public class Vehicle {
         return name;
     }
 
-    public void rotate(boolean isVehicleStarted) {
-        if (isVehicleStarted)
-            System.out.println("||||||||Vehicle started !!!!!!!!!!!!!!!!!!!!!");
-        else
-            System.out.println("Vehicle is not yet started");
+    public String rotate(boolean isVehicleStarted) {
+        if (isVehicleStarted) return "||||||||Vehicle started !!!!!!!!!!!!!!!!!!!!!";
+        else return "";
     }
 
-    public void playMusic(boolean isVehicleStarted) {
-        if (isVehicleStarted)
-            System.out.println("||||||||Music is playing!!!!!!!!!!!!!!!!!!!!!");
-        else
-            System.out.println("Vehicle is not yet started");
+    public String playMusic(boolean isVehicleStarted) {
+        if (isVehicleStarted) return "||||||||Music is playing!!!!!!!!!!!!!!!!!!!!!";
+        else return "";
     }
 
-    public void stopVehicle(boolean isVehicleStarted) {
+    public String stopVehicle(boolean isVehicleStarted) {
         if (isVehicleStarted)
-            System.out.println("||||||||Vehicle stopped !!!!!!!!!!!!!!!!!!!!");
-        else
-            System.out.println("Vehicle is not yet started");
+            return "||||||||Vehicle stopped !!!!!!!!!!!!!!!!!!!!";
+        else return "";
     }
 }
