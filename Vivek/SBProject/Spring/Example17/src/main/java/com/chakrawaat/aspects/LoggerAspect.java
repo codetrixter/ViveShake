@@ -15,9 +15,10 @@ public class LoggerAspect {
 
     private Logger logger = Logger.getLogger(LoggerAspect.class.getName());
 
-    @Around("execution(* com.chakrawaat.*.*(..))")
-    pulbic void aspectLog(ProceedingJoinPoint joinPoint) throws Throwable {
-        logger.info(joinPoint.getSignature().toString() + "method execution start");
+    // @Around("execution(* com.chakrawaat.beans.Vehicle.rotate(..))")
+    @Around("execution(* com.chakrawaat.beans.*.*(..))")
+    public void log(ProceedingJoinPoint joinPoint) throws Throwable {
+        logger.info(joinPoint.getSignature().toString() + " method execution start");
         Instant start = Instant.now();
         joinPoint.proceed();
         Instant finish = Instant.now();
