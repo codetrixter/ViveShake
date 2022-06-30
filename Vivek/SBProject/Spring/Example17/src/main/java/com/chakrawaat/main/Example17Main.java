@@ -6,9 +6,12 @@ import org.springframework.context.annotation.AnnotationConfigApplicationContext
 
 public class Example17Main {
 
-    public static void main(String[] args) {
+    public static void main(String[] args) throws Exception{
         var context = new AnnotationConfigApplicationContext(ProjectConfig.class);
         var veh = context.getBean(Vehicle.class);
-        veh.rotate();
+        boolean isVehicleStarted = true;
+        System.out.println("rotate(): "+veh.rotate(isVehicleStarted));
+        System.out.println("playMusic(): "+veh.playMusic(isVehicleStarted));
+        System.out.println("stopVehicle(): "+veh.stopVehicle(isVehicleStarted));
     }
 }

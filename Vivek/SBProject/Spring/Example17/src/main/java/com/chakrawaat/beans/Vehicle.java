@@ -1,11 +1,12 @@
 package com.chakrawaat.beans;
 
+import com.chakrawaat.interfaces.LogAspect;
 import org.springframework.stereotype.Component;
 
 @Component
 public class Vehicle {
 
-    public Vehicle () {
+    public Vehicle() {
         System.out.println("Vehicle created by Spring Context!!!!");
     }
 
@@ -15,7 +16,20 @@ public class Vehicle {
         return name;
     }
 
-    public void rotate() {
-        System.out.println("||||||||Vehicle started !!!!!!!!!!!!!!!!!!!!!");
+    @LogAspect
+    public String rotate(boolean isVehicleStarted) {
+        if (isVehicleStarted) return "||||||||Vehicle started !!!!!!!!!!!!!!!!!!!!!";
+        else return "";
+    }
+
+    public String playMusic(boolean isVehicleStarted) {
+        if (isVehicleStarted) return "||||||||Music is playing!!!!!!!!!!!!!!!!!!!!!";
+        else return "";
+    }
+
+    public String stopVehicle(boolean isVehicleStarted) {
+        if (isVehicleStarted)
+            return "||||||||Vehicle stopped !!!!!!!!!!!!!!!!!!!!";
+        else return "";
     }
 }
