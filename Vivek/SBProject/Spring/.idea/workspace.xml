@@ -5,10 +5,14 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="f5e6808b-0622-4cb4-9ce7-be2612e4acd8" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Example19/src/main/java/com/chakrawaat/controller/HomeController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Example19/src/main/resources/static/home.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/encodings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Example18/src/main/java/com/chakrawaat/eazyschoool/EazySchoolApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/Example18/src/main/java/com/chakrawaat/eazyschoool/EazySchoolApplication.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Example18/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/Example18/src/main/resources/application.properties" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -18,9 +22,9 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="Class" />
         <option value="Interface" />
         <option value="HTML File" />
+        <option value="Class" />
       </list>
     </option>
   </component>
@@ -50,30 +54,22 @@
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "SHARE_PROJECT_CONFIGURATION_FILES": "true",
     "jdk.selected.JAVA_MODULE": "11",
-    "last_opened_file_path": "C:/Users/vivek.yadav/PersonalRepo/ViveShake/Vivek/SBProject/Spring/Example18",
+    "last_opened_file_path": "C:/Users/vivek.yadav/PersonalRepo/ViveShake/Vivek/SBProject/Spring/Example19/src/main/resources/static",
     "settings.editor.selected.configurable": "MavenSettings"
   }
 }]]></component>
-  <component name="RunManager" selected="Application.EazySchoolApplication">
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\vivek.yadav\PersonalRepo\ViveShake\Vivek\SBProject\Spring\Example19\src\main\resources\static" />
+    </key>
+  </component>
+  <component name="RunManager" selected="Application.com.chakrawaat.EazySchoolApplication">
     <configuration name="EazySchoolApplication" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="com.chakrawaat.eazyschoool.EazySchoolApplication" />
       <module name="example18" />
       <extension name="coverage">
         <pattern>
           <option name="PATTERN" value="com.chakrawaat.eazyschoool.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="Example14Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="com.chakrawaat.main.Example14Main" />
-      <module name="Example14" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="com.chakrawaat.main.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -120,13 +116,26 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="com.chakrawaat.EazySchoolApplication" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="com.chakrawaat.EazySchoolApplication" />
+      <module name="Example19" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.chakrawaat.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Application.com.chakrawaat.EazySchoolApplication" />
         <item itemvalue="Application.EazySchoolApplication" />
         <item itemvalue="Application.Example17Main" />
         <item itemvalue="Application.Example16Main" />
         <item itemvalue="Application.Example15Main" />
-        <item itemvalue="Application.Example14Main" />
       </list>
     </recent_temporary>
   </component>
