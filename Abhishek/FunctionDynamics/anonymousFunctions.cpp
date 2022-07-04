@@ -8,15 +8,17 @@
  * {
  *      function body
  * }
- * 3- We can name/create variable for a lambda so that we can directly use that name 
+ * 3- We can name/create variable for a lambda so that we can directly use that name
  * while passing as function parameter.
  * 4- Lambda's can be stored using either auto(type deduction) or std::function.
  * 5- use auto when initializing variable with lambda and use std::function otherwise.
+ * 6- Generic lambda(Since C++14):
+ *  -> A lambda with one or more auto in tere parameter list is called as a generic lambda.
  * @version 0.1
  * @date 2022-06-27
- * 
+ *
  * @copyright Copyright (c) 2022
- * 
+ *
  */
 
 #include <iostream>
@@ -49,7 +51,7 @@ int main()
     //Lambda version, this type of use of lambda right where it is used is also called function literal.
     auto found = std::find_if(arr.begin(), arr.end(), [](std::string_view str) {
         //body of the nameless function goes here.
-        //return type of this function is deduced automatically by the compiler, by looking at the 
+        //return type of this function is deduced automatically by the compiler, by looking at the
         //last line of the function.
         return (str.find("nut") != std::string_view::npos);
     });
@@ -67,8 +69,8 @@ int main()
 } */
 
 //*************naming a lambda***
-//naming the lambda so that it can be used easily without confusion.
-//instead of auto as a type inference, we can also use function pointer as long as the capture is empty.
+// naming the lambda so that it can be used easily without confusion.
+// instead of auto as a type inference, we can also use function pointer as long as the capture is empty.
 // bool (*isEven)(int) {
 //     [] (int n) {
 //         return ((n%2) == 0);
@@ -80,7 +82,7 @@ int main()
 //     std::vector<int> array{ 2, 4, 6 };
 //     //std::all_of is a part of algorithm header, and it iterates through the given data structor and
 //     //checks for condition for each element of the structure
-//     std::cout << std::all_of(/* firs position interator */array.begin(), /* end pos iterator */array.end(), 
+//     std::cout << std::all_of(/* firs position interator */array.begin(), /* end pos iterator */array.end(),
 //     /* pred function that accepts an element and return bool */ isEven);
 //     return 0;
 // }
@@ -122,8 +124,8 @@ int main()
 //*************storing lambda***
 //*************using std::function for func param***
 // We don't know what fn will be. std::function works with regular functions and lambdas.
-//Here auto cannot be used, it is only allowed since c++20.
-void repeat(int repetitions, const std::function<void(int)>& fn)
+// Here auto cannot be used, it is only allowed since c++20.
+/* void repeat(int repetitions, const std::function<void(int)>& fn)
 {
   for (int i{ 0 }; i < repetitions; ++i)
   {
@@ -138,5 +140,45 @@ int main()
   });
 
   return 0;
-}
+} */
 //*************using std::function for func param***
+//*************Generic lambda***
+int main()
+{
+    std::array<const char *, 12> months{// pre-C++17 use std::array<const char*, 12>
+                                        "January",
+                                        "February",
+                                        "March",
+                                        "April",
+                                        "May",
+                                        "June",
+                                        "July",
+                                        "August",
+                                        "September",
+                                        "October",
+                                        "November",
+                                        "December"};
+
+    // search for two months that start with the same letter.
+    const auto sameLetter{std::adjacent_find(months.begin(), months.end(),
+                                             [](const auto &a, const auto &b)
+                                             {
+                                                 return (a[0] == b[0]);
+                                             })};
+
+    if (sameLetter != months.end())
+    {
+        // std::next returns the next iterator after sameLetter.
+        std::cout << *sameLetter << " and " << *std::next(sameLetter) << " start with the same letter\n";
+    }
+
+    //c-style strings are not always the first choice, therefore string_view is used whenever string fun are needed 
+    const auto stringswithfive{std::count_if(months.begin(), months.end(),
+                                             [](std::string_view str)   
+                                             {
+                                                 return (str.length() == 5);
+                                             })};
+
+    std::cout << "There are " << stringswithfive << " five letter months";
+}
+//*************Generic lambda***
