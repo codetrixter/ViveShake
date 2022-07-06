@@ -5,14 +5,11 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="f5e6808b-0622-4cb4-9ce7-be2612e4acd8" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/Example19/src/main/java/com/chakrawaat/controller/HomeController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Example19/src/main/resources/static/home.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/encodings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Example18/src/main/java/com/chakrawaat/eazyschoool/EazySchoolApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/Example18/src/main/java/com/chakrawaat/eazyschoool/EazySchoolApplication.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Example18/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/Example18/src/main/resources/application.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Example19/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/Example19/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Example19/src/main/java/com/chakrawaat/controller/HomeController.java" beforeDir="false" afterPath="$PROJECT_DIR$/Example19/src/main/java/com/chakrawaat/controller/HomeController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Example19/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/Example19/src/main/resources/application.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Example19/src/main/resources/static/home.html" beforeDir="false" afterPath="$PROJECT_DIR$/Example19/src/main/resources/templates/home.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -61,6 +58,9 @@
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="C:\Users\vivek.yadav\PersonalRepo\ViveShake\Vivek\SBProject\Spring\Example19\src\main\resources\static" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\vivek.yadav\PersonalRepo\ViveShake\Vivek\SBProject\Spring\Example19\src\main\resources\templates" />
     </key>
   </component>
   <component name="RunManager" selected="Application.com.chakrawaat.EazySchoolApplication">
