@@ -9,6 +9,7 @@
         <module name="FirstAssignment" />
         <module name="Example17" />
         <module name="Example19" />
+        <module name="Example20" />
         <module name="Example10" />
         <module name="Example11" />
         <module name="Example12" />
@@ -31,6 +32,7 @@
   <component name="JavacSettings">
     <option name="ADDITIONAL_OPTIONS_OVERRIDE">
       <module name="Example19" options="-parameters" />
+      <module name="Example20" options="-parameters" />
       <module name="example18" options="-parameters" />
     </option>
   </component>
