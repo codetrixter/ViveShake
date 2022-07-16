@@ -23,7 +23,7 @@
     int x{3};
     int y{4};
 
-    //Here 3 is converted to type double which converst the 4 into double as well
+    //Here 3 is converted to type double which converts the 4 into double as well
     //(due to priority arithmetic promotion).
     double d{ (double)3/4};
     std::cout << d;
