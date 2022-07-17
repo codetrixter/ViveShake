@@ -4,7 +4,7 @@ public class MinSumOfFourSubsequence {
     public static void main(String[] args) {
         int[] arr = {1,2,3,4,5,6,7,8};
         int n = 8;
-        System.out.println(getMinSumOfFourSubsequence(arr, n));
+        System.out.println(getMinSumOfFourSubsequence(arr, n));//ans: 6
     }
     
     private static int getMinSumOfFourSubsequence(int [] arr,  int n){
