@@ -13,7 +13,10 @@
  * 4- Lambda's can be stored using either auto(type deduction) or std::function.
  * 5- use auto when initializing variable with lambda and use std::function otherwise.
  * 6- Generic lambda(Since C++14):
- *  -> A lambda with one or more auto in tere parameter list is called as a generic lambda.
+ *  -> A lambda with one or more auto in there parameter list is called as a generic lambda.
+ * 7- A single generic lambda will be generated for each different type that auto resolves to.
+ * 8- Return type deductions are done based on the return type of the lambda body, if there are two 
+ * return types in the body then, there will be compile time error.
  * @version 0.1
  * @date 2022-06-27
  *
@@ -143,7 +146,8 @@ int main()
 } */
 //*************using std::function for func param***
 //*************Generic lambda***
-int main()
+//requires c++17 to build//
+/* int main()
 {
     std::array<const char *, 12> months{// pre-C++17 use std::array<const char*, 12>
                                         "January",
@@ -180,5 +184,65 @@ int main()
                                              })};
 
     std::cout << "There are " << stringswithfive << " five letter months";
-}
+} */
 //*************Generic lambda***
+//*************Generic lambda duplicates***
+/* int main(int argc, char const *argv[])
+{
+    //Here two version of lambda's are generated one for string and other for integer.
+    auto print{
+        [](auto value)
+        {
+            static int callcount = 0;
+            std::cout << callcount++ << ": " << value << '\n';
+        }
+    };
+
+    print("hello");
+    print("world");
+
+    print(1);
+    print(2);
+
+    print("ding dong");
+    return 0;
+} */
+//*************Generic lambda duplicates***
+//*************Return type deductions***
+/* int main(int argc, char const *argv[])
+{
+    //here we rceieve error: inconsistent types ‘int’ and ‘double’ deduced for lambda return type
+    //In order to fix this we can do two things:
+    //1- explict casting of the return type to same types.
+    //2- explicitly define the return type of the lambda.
+    auto divide {
+        [](int x, int y, bool bInteger) -> double
+        {
+            if(bInteger)
+                return x/y; // will do an implicit conversion to double
+            else
+                return static_cast<double>(x)/y;
+        }
+    };
+
+    std::cout << divide(3, 2, true) << '\n';
+    std::cout << divide(3, 2, false) << '\n';
+    return 0;
+} */
+//*************Return type deductions***
+//*************example of a library lambda***
+#include <array>
+
+int main(int argc, char const *argv[])
+{
+    std::array arr{13, 90, 99, 5, 40, 80};
+    std::sort(arr.begin(), arr.end(), std::greater{}); //curly braces are for instantiating object
+    
+    for(int i: arr)
+    {
+        std::cout << i << ' ';
+    }
+    std::cout << "\n";
+    return 0;
+}
+//*************example of a library lambda***
