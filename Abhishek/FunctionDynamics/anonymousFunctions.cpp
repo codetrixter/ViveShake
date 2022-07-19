@@ -233,7 +233,7 @@ int main()
 //*************example of a library lambda***
 #include <array>
 
-int main(int argc, char const *argv[])
+/* int main(int argc, char const *argv[])
 {
     std::array arr{13, 90, 99, 5, 40, 80};
     std::sort(arr.begin(), arr.end(), std::greater{}); //curly braces are for instantiating object
@@ -244,5 +244,65 @@ int main(int argc, char const *argv[])
     }
     std::cout << "\n";
     return 0;
-}
+} */
 //*************example of a library lambda***
+//************Quiz-1***
+/* struct Student
+{
+    std::string name;
+    int points;
+};
+int main(int argc, char const *argv[])
+{
+    std::array<Student, 8> arr{
+  { { "Albert", 3 },
+    { "Ben", 5 },
+    { "Christine", 2 },
+    { "Dan", 8 }, // Dan has the most points (8).
+    { "Enchilada", 4 },
+    { "Francis", 1 },
+    { "Greg", 3 },
+    { "Hagrid", 5 } }
+    };
+
+    auto best = std::max_element(arr.begin(), arr.end(), [](const auto &a, const auto &b)
+    {
+        return (a.points < b.points);
+    });
+
+    std::cout << best->name << " is the best student";
+     return 0;
+}; */
+//************Quiz-1***
+//************Quiz-2***
+struct Season
+{
+  std::string_view name{};
+  double averageTemperature{};
+};
+
+int main()
+{
+  std::array<Season, 4> seasons{
+    { { "Spring", 285.0 },
+      { "Summer", 296.0 },
+      { "Fall", 288.0 },
+      { "Winter", 263.0 } }
+  };
+
+  /*
+   * Use std::sort here
+   */
+  std::sort(seasons.begin(), seasons.end(), [](const auto &a, const auto &b)
+  {
+    return (a.averageTemperature < b.averageTemperature);
+  });
+
+  for (const auto& season : seasons)
+  {
+    std::cout << season.name << '\n';
+  }
+
+  return 0;
+}
+//************Quiz-2***
