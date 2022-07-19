@@ -8,8 +8,9 @@ public class CountRightMinElements {
     public static void main(String[] args) {
         int [] arr = {12, 1, 2, 3, 0, 11, 4};
         int n = 7;
-        int[] result = new CountRigthMinElements().constructLowerArray(arr, n);
-        System.out.println(result);
+        int[] result = new CountRightMinElements().constructLowerArray(arr, n);
+        for(int a : result)
+        System.out.print(a+" ");
     }
  
 
