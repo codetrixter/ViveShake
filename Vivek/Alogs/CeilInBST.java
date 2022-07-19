@@ -36,23 +36,24 @@ public class CeilInBST {
         Explanation: We find 7 in BST, so ceil
         of 6 is 7.
          */
-       Node newRoot = new Node(10);
-       newRoot.left = new Node(5);
-       newRoot.right = new Node(11);
-       newRoot.left.left = new Node(4);
-       newRoot.left.right = new Node(7);
-       newRoot.left.right.right = new Node(8);
+        Node newRoot = new Node(10);
+        newRoot.left = new Node(5);
+        newRoot.right = new Node(11);
+        newRoot.left.left = new Node(4);
+        newRoot.left.right = new Node(7);
+        newRoot.left.right.right = new Node(8);
 
-       System.out.println(findCeil(newRoot, 6));//ans 7
+        System.out.println(findCeil(newRoot, 6));// ans 7
     }
 
     static int findCeil(Node root, int key) {
-        if(root == null) return -1;
+        if (root == null)
+            return -1;
         int data;
-        if(key < root.data) {
+        if (key < root.data) {
             data = findCeil(root.left, key);
             return data == -1 ? root.data : data;
-        } else if( key > root.data) {
+        } else if (key > root.data) {
             return findCeil(root.right, key);
         } else {
             return key;
