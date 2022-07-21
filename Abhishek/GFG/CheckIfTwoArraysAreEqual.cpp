@@ -18,8 +18,8 @@ using namespace std;
 bool areEqual(vector<long long> A, vector<long long> B, int N)
 { 
     // Sort both arrays
-    sort(A.begin(), A.begin()+5);
-    sort(B.begin(), B.begin()+5);
+    sort(A.begin(), A.begin()+N);
+    sort(B.begin(), B.begin()+N);
  
     // Linearly compare elements
     for (int i = 0; i < N; i++)
