@@ -37,20 +37,20 @@ Output :
  */
 
 public class NumberOfProvinces {
-    
+
     public static void main(String[] args) {
-        // Integer[][] arr =  new Integer[][]{ {1,0,1},
-        //                                       {0,1,0},
-        //                                       {1,0,1}
-        //                                     };
+        // Integer[][] arr = new Integer[][]{ {1,0,1},
+        // {0,1,0},
+        // {1,0,1}
+        // };
         List<List<Integer>> adj = new ArrayList<>();
-        Integer[] a1 = {1,0,1};
+        Integer[] a1 = { 1, 0, 1 };
         List<Integer> adj1 = Arrays.asList(a1);
 
-        Integer[] a2 = {0,1,0};
+        Integer[] a2 = { 0, 1, 0 };
         List<Integer> adj2 = Arrays.asList(a2);
 
-        Integer[] a3 = {1,0,1};
+        Integer[] a3 = { 1, 0, 1 };
         List<Integer> adj3 = Arrays.asList(a3);
 
         adj.add(adj1);
@@ -58,7 +58,7 @@ public class NumberOfProvinces {
         adj.add(adj3);
 
         int V = 3;
-        
+
         System.out.println(numProvinces(adj, V));
     }
 
@@ -66,38 +66,41 @@ public class NumberOfProvinces {
         // code here
         int count = 0;
         boolean[] visited = new boolean[V];
-        
-        for(int i = 0; i < adj.get(0).size(); i++) {
-            if(visited[i]) continue;
+
+        for (int i = 0; i < adj.get(0).size(); i++) {
+            if (visited[i])
+                continue;
             count++;
             def(i, visited, adj);
         }
-        
+
         return count;
     }
-    
+
     private static void def(int i, boolean[] visited, List<List<Integer>> adj) {
-        
-        if(visited[i]) return;
-        
+
+        if (visited[i])
+            return;
+
         visited[i] = true;
-        
+
         List<Integer> nbList = new ArrayList<>();
-        
+
         List<Integer> tempList = adj.get(i);
-        
-        for(int j = 0; j < tempList.size(); j++) {
-            
-            if(visited[j]) continue;
-            
-            if(tempList.get(j) == 1 && j != i) {
+
+        for (int j = 0; j < tempList.size(); j++) {
+
+            if (visited[j])
+                continue;
+
+            if (tempList.get(j) == 1 && j != i) {
                 nbList.add(j);
             }
         }
-        
-        for(int x : nbList) {
+
+        for (int x : nbList) {
             def(x, visited, adj);
         }
-        
+
     }
 }
