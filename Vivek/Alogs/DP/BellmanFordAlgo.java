@@ -1,4 +1,4 @@
-import java.util.Arrays;
+import java.util.*;
 
 /* 
 Given a weighted, directed and connected graph of V vertices and E edges, Find the shortest distance of all the vertex's from the source vertex S.
@@ -37,6 +37,7 @@ public class BellmanFordAlgo {
         adj.add(Arrays.asList(new Integer[] { 1, 2, -1 }));
         adj.add(Arrays.asList(new Integer[] { 2, 0, 1 }));
         int V = 3;
+        int S = 2;
 
         int[] ans = bellman_ford(V, adj, S);
 
@@ -44,7 +45,7 @@ public class BellmanFordAlgo {
             System.out.print(dis + " ");
     }
 
-    static int[] bellman_ford(int V, ArrayList<ArrayList<Integer>> adj, int S) {
+    static int[] bellman_ford(int V, List<List<Integer>> adj, int S) {
         // Write your code here
         int[] distance = new int[V];
 
