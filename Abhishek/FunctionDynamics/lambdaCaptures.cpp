@@ -10,6 +10,7 @@
  * by value or by reference.
  * 5- We can define new variables inside the capture of the lambda.
  * 6- We should always be carefull while handling Dangling variables in lambdas.
+ * 7- unintended copies of lambda.
  * @version 0.1
  * @date 2022-07-24
  *
@@ -236,7 +237,7 @@ int main()
 //************ point-5***
 //************ point-6***
 // returns a lambda
-auto makeWalrus(const std::string& name)
+/* auto makeWalrus(const std::string& name)
 {
   // Capture name by reference and return the lambda.
   // temporary string does when this function returns.
@@ -255,5 +256,127 @@ int main()
   sayName();
 
   return 0;
-}
+} */
 //************ point-6***
+//************ point-7***
+/* #include <functional>
+
+void myInvoke(const std::function<void()>& fn)
+{
+  fn();
+}
+int main(int argc, char const *argv[])
+{
+  int i{ 0 };
+
+  auto count{
+    [i]() mutable
+    {
+      std::cout << ++i << "\n";
+    }
+  };
+  //when the count is passed as an argument, function myInvoke creates a copy of count and makes changes to that copy, hence
+  //you see 1 printed 3 times.
+  //use std::ref in order to avoid such case.
+  myInvoke(std::ref(count));
+  myInvoke(std::ref(count));
+  myInvoke(std::ref(count));
+
+  return 0;
+} */
+//************ point-7***
+//************ QUIZ***
+/* int i{};
+static int j{};
+
+int getValue()
+{
+  return 0;
+}
+
+int main()
+{
+  int a{};
+  constexpr int b{};
+  static int c{};
+  static constexpr int d{};
+  const int e{};
+  const int f{ getValue() };
+  static const int g{};
+  static const int h{ getValue() };
+
+  [](){
+    // Try to use the variables without explicitly capturing them.
+    //a;  //No. a has automatic storage duration.
+    b;    
+    c;
+    d;
+    e;
+    //f;  //No. f‘s value depends on getValue, which might require the program to run.
+    g;
+    h;
+    i;
+    j;
+  }();
+
+  return 0;
+} */
+//************ QUIZ***
+//************ QUIZ***
+int main()
+{
+  std::string favoriteFruit{ "grapes" };
+
+  auto printFavoriteFruit{
+    [=]() {
+      std::cout << "I like " << favoriteFruit << '\n';
+    }
+  };
+
+  favoriteFruit = "bananas with chocolate";
+
+  printFavoriteFruit();
+
+  return 0;
+}
+//************ QUIZ***
+//************ QUIZ***
+/**
+ * @brief
+ * We’re going to write a little game with square numbers (numbers which can be created by multiplying an integer with 
+ * itself (1, 4, 9, 16, 25, …)).
+  Ask the user to input 2 numbers, the first is the square root of the number to start at, the second is the amount of numbers to generate.
+   Generate a random integer from 2 to 4, and square numbers in the range that was chosen by the user. Multiply each square number 
+   by the random number. You can assume that the user enters valid numbers.
+
+  The user has to calculate which numbers have been generated. The program checks if the user guessed correctly and removes the guessed 
+  number from the list. If the user guessed wrong, the game is over and the program prints the number that was closest to the user’s final 
+  guess, but only if the final guess was not off by more than 4.
+
+  Here are a couple of sample sessions to give you a better understanding of how the game works:
+
+  Start where? 4
+  How many? 8
+  I generated 8 square numbers. Do you know what each number is after multiplying it by 2?
+  > 32
+  Nice! 7 number(s) left.
+  > 72
+  Nice! 6 number(s) left.
+  > 50
+  Nice! 5 number(s) left.
+  > 126
+  126 is wrong! Try 128 next time.
+  The user chose to start at 4 and wants to play with 8 numbers.
+  Each square number will be multiplied by 2. 2 was randomly chosen by the program.
+  The program generates 8 square numbers, starting with 4 as a base:
+  16 25 36 49 64 81 100 121
+  But each number is multiplied by 2, so we get:
+  32 50 72 98 128 162 200 242
+  Now the user starts to guess. The order in which the guesses are entered doesn’t matter.
+  32 is in the list.
+  72 is in the list.
+  126 is not in the list, the user loses. There is a number in the list (128) that is not more then 4 away from the user’s guess, 
+  so that number is printed. 
+ */
+
+//************ QUIZ***
