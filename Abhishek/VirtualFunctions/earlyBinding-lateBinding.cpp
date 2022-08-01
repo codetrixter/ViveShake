@@ -12,6 +12,9 @@
  *      b. jump to the resolved address.
  * 
  * ***To read in depth about this follow: https://stackoverflow.com/questions/21350478/what-does-memory-allocated-at-compile-time-really-mean
+ * 
+ * Note::Any class that uses virtual functions has a *__vptr, and thus each object of that class will be bigger by one pointer. 
+ * Virtual functions are powerful, but they do have a performance cost.
  * @version 0.1
  * @date 2022-07-31
  * 
