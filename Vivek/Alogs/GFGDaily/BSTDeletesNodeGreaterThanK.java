@@ -1,3 +1,6 @@
+import java.util.LinkedList;
+import java.util.Queue;
+
 /* 
 Given a BST and a value k, the task is to delete the nodes having values greater than or equal to k.
 
@@ -20,7 +23,7 @@ Expected Auxiliary Space: O(1).
  */
 
 public class BSTDeletesNodeGreaterThanK {
-    
+
     public static void main(String[] args) {
         Node root = new Node(4);
         root.left = new Node(1);
@@ -29,22 +32,29 @@ public class BSTDeletesNodeGreaterThanK {
         Node node = deleteNode(root, 2);
         System.out.println();
         postOrderTraversal(node);
+
+        Queue<Integer> que = new LinkedList<>();
+        que.add(10);
+        que.poll();
+        
     }
 
     private static void postOrderTraversal(Node node) {
-        if(node == null) return;
+        if (node == null)
+            return;
         postOrderTraversal(node.left);
         postOrderTraversal(node.right);
-        System.out.print(node.data+" ");
+        System.out.print(node.data + " ");
     }
 
-    public static Node deleteNode(Node root,int k) {
+    public static Node deleteNode(Node root, int k) {
 
-        if(root == null) return null;
+        if (root == null)
+            return null;
         root.left = deleteNode(root.left, k);
         root.right = deleteNode(root.right, k);
-        
-        if(root.data >= k) {
+
+        if (root.data >= k) {
             return root.left;
         }
         return root;
