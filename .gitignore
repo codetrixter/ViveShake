@@ -82,3 +82,4 @@ Latest commit e111f1c on Nov 14, 2021
 *.tar.gz
 *.rar
 
+.vscode/settings.json
