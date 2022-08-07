@@ -54,9 +54,11 @@ int main(int argc, char const *argv[])
 
     auto startTime{ high_resolution_clock::now() };
 
+    //here we have created threads using function pointers, which represent the task to be done by the threads.
     std::thread t1(findEven, start, end);
     std::thread t2(findOdd, start, end);
 
+    //join() lets the new threads t1 and t2 finish before exiting from main thread.
     t1.join();
     t2.join();
     // findEven(start, end);
