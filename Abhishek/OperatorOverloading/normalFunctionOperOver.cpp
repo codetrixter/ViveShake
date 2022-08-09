@@ -2,7 +2,7 @@
  * @file normalFunctionOperOver.cpp
  * @author Abhishek
  * @brief Here we discuss about how to overload operator without using fried functions.
- * ***normal functions should be prefferred instead fo friend functions if it's possible to do so without
+ * ***normal functions should be preferred instead of friend functions if it's possible to do so without
  * adding functions to the class.
  * @version 0.1
  * @date 2022-08-07
