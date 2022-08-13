@@ -1,6 +1,8 @@
 import java.util.Arrays;
 import java.util.HashSet;
+import java.util.LinkedHashMap;
 import java.util.List;
+import java.util.function.Function;
 import java.util.stream.Collector;
 import java.util.stream.Collectors;
 
@@ -48,5 +50,24 @@ public class StreamQuestions {
         System.out.println("Q6 Given a list of integers, find the maximum value element present in it using Stream functions?");
         int max = myLsit.stream().max(Integer::compare).get();
         System.out.println(max);
+
+        System.out.println("Q7 Given a String, find the first non-repeated character in it using Stream functions?");
+        String input = "Java Hungry Blog Alive is Awesome";
+        Character res = input.chars()
+                .mapToObj(s -> Character.toLowerCase(Character.valueOf((char) s))) // First convert to Character object
+                                                                                   // and then to lowercase
+                .collect(Collectors.groupingBy(Function.identity(), LinkedHashMap::new, Collectors.counting()))// Store
+                                                                                                               // the
+                                                                                                               // chars
+                                                                                                               // in map
+                                                                                                               // with
+                                                                                                               // count
+                .entrySet()
+                .stream()
+                .filter(entry -> entry.getValue() == 1L)
+                .map(entry -> entry.getKey())
+                .findFirst()
+                .get();
+        System.out.println(res);
     }
 }
