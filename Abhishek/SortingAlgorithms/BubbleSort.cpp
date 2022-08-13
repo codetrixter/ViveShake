@@ -7,6 +7,9 @@
  * 3- Whether algo is adaptive or not: originally no, but made into one.
  * 4- Whether algo is stable or not: yes because the order of duplicate elements after sorting is maintained.
  * 5- If the algo took extra memory or not: NO
+ * 
+ * ***NOTE: Intermediate results give the highest or largest elemnt in the data list, can be use to find out 
+ * kth larget element as well.
  * @version 0.1
  * @date 2022-08-11
  * 
