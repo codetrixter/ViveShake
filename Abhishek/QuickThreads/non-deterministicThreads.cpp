@@ -23,7 +23,9 @@ int main(int argc, char const *argv[])
     {
         workers.push_back(std::thread([i]()
         {
-            std::cout << "Hi from worker thread!" << i << std::endl;
+            //Hi from worker thread!0Hi from worker thread!1, this gets printed which means that each statement 
+            //print is a separate instruction execution
+            std::cout << "Hi from worker thread!" << i << std::endl;    
         }));
     }
 
