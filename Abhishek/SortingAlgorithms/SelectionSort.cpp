@@ -2,7 +2,11 @@
  * @file SelectionSort.cpp
  * @author Abhishek
  * @brief here we explore Selection Sorting technique:
- * //TODO
+ * 1- Number of comparisons - O(n^2)
+ * 2- Number of swaps - O(n)
+ * 3- Adaptive: No
+ * 4- Stable: No
+ * 5- Extra memory usage: No
  * 
  * ***NOTE: Intermediate results are usefull and show the kth smallest elemnt in the data set.
  * @version 0.1
