@@ -39,7 +39,6 @@ public class FactorialDigitSum {
     }
 
     static ArrayList<Integer> factDigit(int N) {
-        // code here
 
         ArrayList<Integer> result = new ArrayList<>();
         int[] fact = new int[10];
