@@ -3,8 +3,10 @@
  * @author Abhishek
  * @brief Here we discuss following about Quick sorting technique:
  * 1- Best case - O(nlogn)
+ *  a. for sorted list and pivot as end complexity is O(n^2)
+ *  b. for sorted list and pivot as middle element th complexity is O(nlogn).
  * 2- Worst case - O(n^2)
- * NOTE: Coubple of aliases for Quick Sort are:
+ * NOTE: Couple of aliases for Quick Sort are:
  *  a. Selection Exchange Sort.
  *  b. Partition Exchange Sort.
  * @version 0.1
@@ -18,7 +20,7 @@
 #include <array>
 #include <climits>  //INT_MAX
 
-int partition(std::array<int, 11>& A, int l, int h)
+/* int partition(std::array<int, 11>& A, int l, int h)
 {
     int i = l, j = h;
     int pivot = A[l];
@@ -61,9 +63,9 @@ int main(int argc, char const *argv[])
     for(auto i : list)
         std::cout << i << " ";
     return 0;
-}
+} */
 //-----------------------Alternatively
-/* using namespace std;
+using namespace std;
  
 template <class T>
 void Print(T& vec, int n, string s){
@@ -194,4 +196,4 @@ int main() {
     Print(C, sizeof(C)/sizeof(C[0]), " Sorted C");
  
     return 0;
-} */
+}
