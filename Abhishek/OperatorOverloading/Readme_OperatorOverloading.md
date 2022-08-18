@@ -18,3 +18,6 @@
 
 [Overloading subscript operator](subScriptOverloading.cpp)
 
+[Overloading parenthesis](overloadingParenthesis.cpp)->moderate understanding
+
+[Overloading typecasts](typecastOverloading.cpp)->moderate understanding
