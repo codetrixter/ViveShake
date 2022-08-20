@@ -116,6 +116,11 @@ Something goo()
 	Something s;
 	return s; // copy constructor normally called here
 }
+/**
+ * @brief Even though copy constructor is called here at 4 places but all those are elised
+ * 
+ * @return int error code
+ */
 
 int main()
 {
