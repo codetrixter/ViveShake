@@ -21,3 +21,11 @@
 [Overloading parenthesis](overloadingParenthesis.cpp)->moderate understanding
 
 [Overloading typecasts](typecastOverloading.cpp)->moderate understanding
+
+[The Copy Constructor](copyConstructor.cpp)
+
+[Copy Initialization](copyInitialization.cpp)->moderate understanding 
+
+[Converting Constructors, explicit and delete](COnvertingCtors-Explicit.cpp)
+
+[Overloading Assignment Operator]
