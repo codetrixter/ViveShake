@@ -31,7 +31,8 @@
     e) A bag of marbles - Aggregation: The bag and the marbles inside have independent existences.
 
  * BEST:PRACTICE::
- * Implement the simplest relationship type that meets the needs of your program, not what seems right in real-life.   
+ * Implement the simplest relationship type that meets the needs of your program, not what seems right in real-life.
+ * ]   
  * @version 0.1
  * @date 2022-08-25
  * 
