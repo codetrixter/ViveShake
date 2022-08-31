@@ -1,0 +1,79 @@
+/**
+ * @file move-ctor&assign.cpp
+ * @author Abhishek
+ * @brief Here we discuss about the move constructor and move assignment operator:
+ * 1- 
+ * @version 0.1
+ * @date 2022-08-31
+ * 
+ * @copyright Copyright (c) 2022
+ * 
+ */
+#include <iostream>
+
+template<typename T>
+class Auto_ptr3
+{
+	T* m_ptr;
+public:
+	Auto_ptr3(T* ptr = nullptr)
+		:m_ptr(ptr)
+	{
+	}
+
+	~Auto_ptr3()
+	{
+		delete m_ptr;
+	}
+
+	// Copy constructor
+	// Do deep copy of a.m_ptr to m_ptr
+	Auto_ptr3(const Auto_ptr3& a)
+	{
+		m_ptr = new T;
+		*m_ptr = *a.m_ptr;
+	}
+
+	// Copy assignment
+	// Do deep copy of a.m_ptr to m_ptr
+	Auto_ptr3& operator=(const Auto_ptr3& a)
+	{
+		// Self-assignment detection
+		if (&a == this)
+			return *this;
+
+		// Release any resource we're holding
+		delete m_ptr;
+
+		// Copy the resource
+		m_ptr = new T;
+		*m_ptr = *a.m_ptr;
+
+		return *this;
+	}
+
+	T& operator*() const { return *m_ptr; }
+	T* operator->() const { return m_ptr; }
+	bool isNull() const { return m_ptr == nullptr; }
+};
+
+class Resource
+{
+public:
+	Resource() { std::cout << "Resource acquired\n"; }
+	~Resource() { std::cout << "Resource destroyed\n"; }
+};
+
+Auto_ptr3<Resource> generateResource()
+{
+	Auto_ptr3<Resource> res{new Resource};
+	return res; // this return value will invoke the copy constructor
+}
+
+int main()
+{
+	Auto_ptr3<Resource> mainres;
+	mainres = generateResource(); // this assignment will invoke the copy assignment
+
+	return 0;
+}
