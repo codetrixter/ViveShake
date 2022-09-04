@@ -14,10 +14,12 @@
 #include <vector>
 #include <cmath>
 
-/* std::vector<int> merge(std::vector<int> A, int l, int mid, int h)
+void merge(std::vector<int>& A, int l, int mid, int h)
 {
     int i = l, j = mid+1, k = l;
+    
     std::vector<int> C(A.size());
+
     while(i <= mid && j <= h)
     {
         if(A[i] < A[j])
@@ -31,22 +33,21 @@
         C[k++] = A[j++];
 
     //copying elements back to the original array
-    for(int i = l; i < h; i++)
-        A[i] = C[i];
-    return A;
+    for(int s = l; s <= h; s++)
+        A[s] = C[s];
 }
 
-std::vector<int> MergeSortIterative(std::vector<int>& A, int n)
+std::vector<int> MergeSortIterative(std::vector<int> A, int n)
 {
     int p, i, l, h, mid;
 
     for(p = 2; p <= n; p *= 2)
     {
-        for(i = 0; (i+p-1) < n; i +=p)
+        for(i = 0; i + p - 1 < n; i = i+p)
         {
             l = i;
-            h = i+p-1;
-            mid = std::floor((l+h)/2);
+            h = i + p - 1;
+            mid = (l+h)/2;
             merge(A, l, mid, h);
         }
     }
@@ -56,18 +57,33 @@ std::vector<int> MergeSortIterative(std::vector<int>& A, int n)
     return A;
 }
 
+void recursiveMergeSort(std::vector<int>& A, int l, int h)
+{
+    int mid;
+    if(l < h)
+    {
+        mid = (l+h)/2;
+        recursiveMergeSort(A, l, mid);
+        recursiveMergeSort(A, mid+1, h);
+        merge(A, l, mid, h);
+    }
+}
+
 int main(int argc, char const *argv[])
 {
     std::vector<int> inp = {8, 3, 7, 4, 9, 2, 6, 5};
-    auto out = MergeSortIterative(inp, 8);
+    //auto out = MergeSortIterative(inp, 8);
 
-    for(auto item: out)
+    recursiveMergeSort(inp, 0, 7);
+
+    for(auto item: inp)
     {
         std::cout << item << " ";
     }
     return 0;
-} */
-#include <stdio.h>
+}
+//-----------------------Alternative implementation---------------
+/* #include <stdio.h>
 #include <stdlib.h>
 using namespace std;
 void merge(int A[], int l, int mid, int h)
@@ -121,4 +137,4 @@ int main()
         printf("%d ", A[i]);
     printf("\n");
     return 0;
-}
+} */
