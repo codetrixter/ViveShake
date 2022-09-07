@@ -1,25 +1,25 @@
 # TOPICS COVERED
 
-[Basic Pointers](BasicPointersAndReferencetypesInInheritance.cpp)
-
-[Polymorphism](polimorphism.cpp)
-
-[Covariant Return Types](final-covariantreturnTypes.cpp)
-
-[Virtual Destructors](virtualDestructors.cpp)
-
-[Binding](earlyBinding-lateBinding.cpp)
-
-[Virtual Table](virtualTable.cpp)
-
-[Abstract/Interface](pureVirtual-Abstract-Interfaces.cpp)
-
-[Virtual Base Class](virtualbaseClasse.cpp)
-
-[Object Slicing](objectSlicing.cpp)
-
-[Dynamic Casting](dynamicCasts.cpp)
-
-TBD - Printing Inherited Classes
-
-TBD - Chapter End Quiz
+1. [Basic Pointers](BasicPointersAndReferencetypesInInheritance.cpp)
+ 
+2. [Polymorphism](polimorphism.cpp)
+ 
+3. [Covariant Return Types](final-covariantreturnTypes.cpp)
+ 
+4. [Virtual Destructors](virtualDestructors.cpp)
+ 
+5. [Binding](earlyBinding-lateBinding.cpp)
+ 
+6. [Virtual Table](virtualTable.cpp)
+ 
+7. [Abstract/Interface](pureVirtual-Abstract-Interfaces.cpp)
+ 
+8. [Virtual Base Class](virtualbaseClasse.cpp)
+ 
+9. [Object Slicing](objectSlicing.cpp)
+ 
+10. [Dynamic Casting](dynamicCasts.cpp)
+ 
+11. TBD - Printing Inherited Classes
+ 
+12. TBD - Chapter End Quiz

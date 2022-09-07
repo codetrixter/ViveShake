@@ -1,34 +1,34 @@
 # TOPICS COVERED
 
-[Introduction ot operator overloading](Introduction.cpp)
+1. [Introduction ot operator overloading](Introduction.cpp)
 
-[Overloading Arithmetic operators using friend function](friendfuncoverloading.cpp)
+2. [Overloading Arithmetic operators using friend function](friendfuncoverloading.cpp)
 
-[Overloading Operators using normal functions](normalFunctionOperOver.cpp)
+3. [Overloading Operators using normal functions](normalFunctionOperOver.cpp)
 
-[Overloading the I/O operators](overloadingInputOutput.cpp)
+4. [Overloading the I/O operators](overloadingInputOutput.cpp)
 
-[Overloading Operators using member functions](memberFunctionsOperOver.cpp)
+5. [Overloading Operators using member functions](memberFunctionsOperOver.cpp)
 
-[Overloading unary operators +, - and !](unaryOperOver.cpp)
+6. [Overloading unary operators +, - and !](unaryOperOver.cpp)
 
-[Overloading comparison operators](comparisonOperOver.cpp)
+7. [Overloading comparison operators](comparisonOperOver.cpp)
 
-[Overloading Incremet and decrement operators](OverIncrDecrOperators.cpp)
+8. [Overloading Incremet and decrement operators](OverIncrDecrOperators.cpp)
 
-[Overloading subscript operator](subScriptOverloading.cpp)
+9. [Overloading subscript operator](subScriptOverloading.cpp)
 
-[Overloading parenthesis](overloadingParenthesis.cpp)->moderate understanding
+10. [Overloading parenthesis](overloadingParenthesis.cpp)->moderate understanding
 
-[Overloading typecasts](typecastOverloading.cpp)->moderate understanding
+11. [Overloading typecasts](typecastOverloading.cpp)->moderate understanding
 
-[The Copy Constructor](copyConstructor.cpp)
+12. [The Copy Constructor](copyConstructor.cpp)
 
-[Copy Initialization](copyInitialization.cpp)->moderate understanding 
+13. [Copy Initialization](copyInitialization.cpp)->moderate understanding 
 
-[Converting Constructors, explicit and delete](COnvertingCtors-Explicit.cpp)
+14. [Converting Constructors, explicit and delete](COnvertingCtors-Explicit.cpp)
 
-[Overloading Assignment Operator](overloadingAssign.cpp)
+15. [Overloading Assignment Operator](overloadingAssign.cpp)
 
-[Shallow vs Deep copy](shallowDeepCopy.cpp)
+16. [Shallow vs Deep copy](shallowDeepCopy.cpp)
 
