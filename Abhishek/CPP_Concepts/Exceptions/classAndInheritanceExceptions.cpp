@@ -5,6 +5,9 @@
  * 1- member functions: Exceptions can be used to indiacate error conditions that may occur  during the execution of out member function.
  * 2- Inheritance: 
  * 3- User defined exceptions
+ * 4- Exception can be caught of derived and base types.
+ * 		NOTE: Handlers for derived exception classes should be listed before those for the base classes.
+ * 5- std::exception is the base class of all the types of exceptions that c++ standard provides.
  * @version 0.1
  * @date 2022-09-11
  * 
@@ -76,7 +79,7 @@ int main()
 #include <string>
 #include <string_view>
 
-class ArrayException
+/* class ArrayException
 {
 private:
 	std::string m_error;
@@ -122,5 +125,66 @@ int main()
 	{
 		std::cerr << "An array exception occurred (" << exception.getError() << ")\n";
 	}
-}
+} */
 //***************User defined Excetion***
+//***************Exception with inheritance relation***
+/* class Base
+{
+public:
+    Base() {}
+};
+
+class Derived: public Base
+{
+public:
+    Derived() {}
+};
+
+int main()
+{
+    try
+    {
+        throw Derived();
+    }
+    catch (const Derived& derived)
+    {
+        std::cerr << "caught Derived";
+    }
+    catch (const Base& base)
+    {
+        std::cerr << "caught Base";
+    }
+
+    return 0;
+} */
+//***************Exception with inheritance relation***
+//***************std::Exception***
+#include <cstddef> // for std::size_t
+#include <exception> // for std::exception
+#include <limits>
+
+int main()
+{
+    try
+    {
+        // Your code using standard library goes here
+        // We'll trigger one of these exceptions intentionally for the sake of the example
+        std::string s;
+        s.resize(std::numeric_limits<std::size_t>::max()); // will trigger a std::length_error or allocation exception
+    }
+	// This handler will catch std::length_error (and any exceptions derived from it) here
+	catch (const std::length_error& exception)
+	{
+		std::cerr << "You ran out of memory!" << '\n';
+	}
+	// This handler will catch std::exception (and any exception derived from it) that fall
+	// through here
+	catch (const std::exception& exception)
+	{
+		std::cerr << "Standard exception: " << exception.what() << '\n';
+	}
+
+    return 0;
+}
+//***************std::Exception***
+
