@@ -2,7 +2,9 @@
  * @file rethrowExceptions.cpp
  * @author Abhishek
  * @brief Here we discuss about rethrowing exceptions:
- * 1- When rethrowing the same exceptions, use the throw keyword by itself.
+ * 1- This is used when, you may run into a case where you want to catch an exception, but not want to (or have the ability to) fully handle 
+ * it at the point where you catch it.
+ * 2- When rethrowing the same exceptions, use the throw keyword by itself.
  * @version 0.1
  * @date 2022-09-15
  * 
