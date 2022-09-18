@@ -12,20 +12,41 @@
 #include <iostream>
 #include <thread>
 
-void task1()
+void function1()
 {
-    std::cout << "Beauty is only skin deep";
+   printf("Inside function1()... %d \n", std::this_thread::get_id());
+}
+
+class callableClass
+{
+public:
+   void operator()()
+   {
+      printf("Inside callableclass ()... %d \n", std::this_thread::get_id());
+   }
+};
+
+void run()
+{
+   callableClass obj1;
+   std::thread t1(function1);
+   std::thread t2(obj1);
+
+   std::thread t3([]
+      {
+         printf("Inside lambda()... %d \n", std::this_thread::get_id());
+      });
+
+   t1.join();
+   t2.join();
+   t3.join();
+
+   printf("Inside main()... %d \n", std::this_thread::get_id());
 }
 
 int main(int argc, char const *argv[])
 {
-    std::thread t1(task1);  //thread t1 starts runnning
-    //t1.join();      //main thread waits for t1 to finish
-    t1.detach();      //t1 will free on its own, meaning main and t1 thread run in parallel -- daemon thread
-
-    //returns true if thread is joinable.
-    if(t1.joinable())
-        t1.join();
-
+    run();
     return 0;
 }
+

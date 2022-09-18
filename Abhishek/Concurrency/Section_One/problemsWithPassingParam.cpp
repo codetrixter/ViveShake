@@ -2,7 +2,8 @@
  * @file problemsWithPassingParam.cpp
  * @author Abhishek
  * @brief Here we discuss about the problems that may arise while passing parameters to a worker thread:
- * 1-  
+ * 1- Here the thread 1 finishes execution while thread 2 is still using reference variable shared by thread1, which creates dangling 
+ * reference problem.
  * @version 0.1
  * @date 2022-09-10
  * 
