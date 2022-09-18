@@ -1,6 +1,5 @@
 /* 
-Given two integers L and R find the difference of number of composites and primes between the
-range L and R (both inclusive).
+Given two integers L and R find the difference of number of composites and primes between the range L and R (both inclusive).
 
 Example 1:
 
@@ -22,6 +21,10 @@ You don't need to read or print anything. Your task is to complete the function 
 
 Expected Time Complexity: O(nlog(n)) where n = R - L + 1
 Expected Space Complexity: O(n)
+ 
+
+Constraints:
+1 <= L <= R <= 105 
  */
 
 public class CompositeAndPrime {
@@ -34,29 +37,31 @@ public class CompositeAndPrime {
 
     public int Count(int L, int R) {
         // code here
-        int com = 0, prime = 0;
-        for (int i = L; i <= R; i++) {
-            if (i == 1)
-                continue;
-            if (isPrime(i)) {
-                prime++;
-            } else {
-                com++;
+        boolean[] prime = new boolean[R + 1];
+        Arrays.fill(prime, true);
+        prime[0] = false;
+        prime[1] = false;
+
+        int primes = 0, comps = 0;
+
+        for (int i = 2; i <= R; i++) {
+            if (prime[i]) {
+                for (int j = 2 * i; j <= R; j += i) {
+                    prime[j] = false;
+                }
             }
         }
 
-        return com - prime;
-    }
-
-    private boolean isPrime(int i) {
-        if (i <= 1)
-            return true;
-
-        int sqrtI = (int) Math.sqrt(i);
-        for (int j = 2; j <= sqrtI; j++) {
-            if (i % j == 0)
-                return false;
+        for (int i = L; i <= R; i++) {
+            if (prime[i])
+                primes++;
+            else
+                comps++;
         }
-        return true;
+
+        if (L == 1)
+            comps--;
+
+        return comps - primes;
     }
 }
