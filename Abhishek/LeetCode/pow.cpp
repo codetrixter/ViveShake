@@ -24,31 +24,6 @@
  */
 #include <bits/stdc++.h>
 
-// double myPow(double x, int n)
-// {
-//     double result = 1;
-//     if (n == 0)
-//         return 1.0;
-//     if (n > 0)
-//     {
-//         while (n > 0)
-//         {
-//             result *= x;
-//             n--;
-//         }
-//     }
-
-//     if (n < 0)
-//     {
-//         while (n < 0)
-//         {
-//             result /= x;
-//             n++;
-//         }
-//     }
-
-//     return result;
-// }
 double myPow(double x, int n)
 {
     if (n == INT_MAX)
