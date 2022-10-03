@@ -1,3 +1,5 @@
+import java.util.ArrayList;
+
 /* 
  * 
 Given an array of size N containing only 0s, 1s, and 2s; sort the array in ascending order.
@@ -64,6 +66,8 @@ public class SortAnArrayOf0s1sAnd2s {
                 idx_1--;
             } else {
                 a[i] = 2;
+                ArrayList<Integer> list;
+                ArrayList<Integer> temp = temp.addAll(c)
             }
         }
     }
