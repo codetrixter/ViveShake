@@ -12,7 +12,7 @@
  * 4- making friend member function: we can make a member function of another class a friend of another class.
  *      a- Note that making a specific member function a friend requires the full definition for the class of the member function to have been seen first.
  * 
- * Thus featire of C++ is used for operator overloading.
+ * This feature of C++ is used for operator overloading.
  * @version 0.1
  * @date 2022-06-11
  * 

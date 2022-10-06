@@ -1,8 +1,8 @@
 /**
  * @file is-a-relation.cpp
  * @author Abhishek
- * @brief This example shows the is- a relation of the inheritance 
- * 1- Inheritance is useful in the sense that we dont have redefin the base class info into the derived classes,
+ * @brief This example shows the is - a relation of the inheritance 
+ * 1- Inheritance is useful in the sense that we dont have to redefine the base class info into the derived classes,
  * in short it allows us to reuse the classes.
  * @version 0.1
  * @date 2022-06-13

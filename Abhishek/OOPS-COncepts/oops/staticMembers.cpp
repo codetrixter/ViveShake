@@ -3,7 +3,7 @@
  * @author Abhishek 
  * @brief Here we discuss the properties of the static members 
  * 1- They are associated with the class and not the object, hence they are shared among objects.
- * 2- When static members are of const integral type(char and bool) or const enum, then there is not 
+ * 2- When static members are of const integral type(char and bool) or const enum, then there is no 
  * need for initialization outside the class.
  * @version 0.1
  * @date 2022-06-06

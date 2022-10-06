@@ -3,12 +3,12 @@
  * @author Abhishek
  * @brief Const class and member functions:
  * Here we cover that:
- * 1- const data memebrs and object needs to be initialized at the time of decalration.
+ * 1- const data memebers and object needs to be initialized at the time of decalration.
  * 2- const object cannot call non-cont member functions as that would violate the rule of const.
- * 3- any const member function cannot chnage or call the non-const members of the class.
+ * 3- any const member function cannot change or call the non-const members of the class.
  * 4- never make function parameters as const if they are call by value, since they are temporary.
  * 5- const members cannot return non-const references to members.
- * 6- If a const memmber function is invoked on non-const objects then the function returns const object.
+ * 6- If a const member function is invoked on non-const objects then the function returns const object.
  * @version 0.1
  * @date 2022-06-05
  * 

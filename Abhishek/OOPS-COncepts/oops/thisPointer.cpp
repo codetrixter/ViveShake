@@ -1,7 +1,7 @@
 /**
  * @file thisPointer.cpp
  * @author Abhishek
- * @brief Here we will se the puspose this pointer in c++
+ * @brief Here we will see the puspose this pointer in c++
  * 1- this is a hidden pointer which is sent along with function param when a member func. is called on an instance
  * of a class.
  * 2- It can also be used to create member function chaining.
