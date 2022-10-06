@@ -1,7 +1,7 @@
 /**
  * @file smartPointers.cpp
  * @author Abhishek
- * @brief here we discuss the usefullness of smart pointers(Composition Class):
+ * @brief Here we discuss the usefullness of smart pointers(Composition Class):
  * 1- These help prevent memory leaks, as can be seen in someFunction(), as it terminates the local variable Auto_ptr's destructor is called which 
  * deallocates the memory.
  * 2- For supporting copy ctor and assignment operators, we implemented move semantics for the objects which only allows one object of Auto_ptr

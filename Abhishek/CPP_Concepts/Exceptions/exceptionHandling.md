@@ -22,3 +22,5 @@
     3. The error cannot be handled at the place where it occurs.
     4. There isn’t a good alternative way to return an error code back to the caller.
     
+8. ## noexcept
+### noexcept qualifier, it just basically informs the programmer about whether the function will throw exception or not.

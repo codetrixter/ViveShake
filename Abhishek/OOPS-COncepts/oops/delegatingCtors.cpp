@@ -4,8 +4,8 @@
  * @brief overlapng and delegating constructors/constructor chaining 
  * Rules for delegating:
  * 1- the contructor that delegates to another constructor cannot initialize the member varibles of the class,
- * it can doo either delegation or initialization but not both.
- * 2- make sure that while creating a constructor dlegation chain, there is not loop.
+ * it can do either delegation or initialization but not both.
+ * 2- make sure that while creating a constructor delegation chain, there are no loops.
  * @version 0.1
  * @date 2022-06-02
  * 
@@ -26,9 +26,9 @@
 //     dummy(int a)
 //     {
 //         /**
-//          * This will comile without error but might sometimes behave un-expectedly,
-//          * because dummy obj that is created by this call will be destryed after returning from the default ctor
-//          * as it is not stired in any variable.
+//          * This will compile without error but might sometimes behave un-expectedly,
+//          * because dummy obj that is created by this call will be destroyed after returning from the default ctor
+//          * as it is not stored in any variable.
 //          */
 //         dummy();    
 //         std::cout << "inside param. ctor." ;
@@ -48,7 +48,7 @@ public:
         std::cout << "Employee " << m_name << " created.\n";
     }
 
-    // Use a delegating constructor to minimize redundant code
+    // Use a constructor delegation to minimize redundant code
     Employee(const std::string& name) : Employee{ 0, name }
     { }
 };
