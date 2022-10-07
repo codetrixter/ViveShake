@@ -6,7 +6,7 @@
  * 1- There will be two queues:
  *      a. Engine work queue.
  *      b. Clean work queue.
- * 2- If queue has work the sleep for 1 second else sleep for 2 seconds.
+ * 2- If queue has work then sleep for 1 second else sleep for 2 seconds.
  * @version 0.1
  * @date 2022-09-18
  *
