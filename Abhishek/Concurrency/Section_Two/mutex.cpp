@@ -6,6 +6,10 @@
  *  a. lock: locks the mutex, blocks if the mutex is not available.
  *  b. try_lock: tries to lock the mutex, returns is mutex is not available.
  *  c. unlock: unlocks the mutex.
+ * 2- Lock_guard: 
+ *      - It is a mutex wrapper that provides a convenient RAII style mechanism for owning a mutex for the duration of a scoped block.
+ *      - When a lock_guard object is created, it takes ownership opf the mutex and it is deleted and mutex is released when the scope of lock_guard 
+ *          ends.
  * EXAMPLE: List or most of the STL data structures are not thread safe, hence if more than one thread tries to access or insert data into 
  * the list, then there is a chnace that the data can be currupted or removed without notice.
  *  In the below example, when two threads try insert an elemnt to the front of the list then in some cases the element inserted by one thread 
@@ -26,6 +30,7 @@ std::mutex m;
 
 void addToList(const int& x)
 {
+    std::lock_guard<std::mutex> lg(m);
     //m.lock();
     myList.push_front(x);
     //m.unlock();
