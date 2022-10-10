@@ -1,4 +1,4 @@
-# TOPIC COVERED
+# TOPICS COVERED FOR SECTION 1(Thread management guide)
 
 1. [How to Launch Threads in different ways](helloThreads.cpp)
 
@@ -21,3 +21,18 @@
 10. [programming exercise Two](Section_One/Exercise2.cpp)
 
 11. [programming exercise Three](Section_One/Exercise3.cpp)
+
+
+# TOPICS COVERED FOR SECTION 2(Thread Safe access to shared data and locking mechanisms)
+
+1. [Mutexes](Section_Two/mutex.cpp)
+
+2. [Things to remember when using Mutex](Section_Two/mutexThingsToRemember.cpp)
+
+3. [Trivial implementation of thread safe stack implementation](Section_Two/trivialThreadSafeStack.cpp)
+
+4. [Thread safe Stack implementation: race condition inherit from the interface](Section_Two/updatedThreadSafeStack.cpp)
+
+5. [Dead Locks](Section_Two/deadLocks.cpp)
+
+6. [Unique Locks](Section_Two/uniqueLocks.cpp)
