@@ -36,3 +36,11 @@
 5. [Dead Locks](Section_Two/deadLocks.cpp)
 
 6. [Unique Locks](Section_Two/uniqueLocks.cpp)
+
+# TOPICS COVERED FOR SECTION 3(Communication between threads using condition variables and futures)
+
+1. [Introduction to condition variables](Section_Three/introduction.cpp)
+
+2. [Using condition variables and its details](Section_Three/conditionVariables.cpp)
+
+3. [Thread safe Implementation of Queue](Section_Three/threadSafeQ.cpp)
