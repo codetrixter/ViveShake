@@ -3,7 +3,7 @@
  * @author Abhishek
  * @brief here we discuss about the following:
  * 1- override specifier: this just ensures that the functions that are meant to be overriden are overriden with correct function signatures and are not 
- * taken as separate functions of the tderived class.
+ * taken as separate functions of the derived class.
  * 2- final specifier: This prevents from further overriding and inheritance, can be used with funtions and classes.
  * 3- covariant return type: This allows the derived versions of the functions to have return types that are of inherited class type.
  * @version 0.1

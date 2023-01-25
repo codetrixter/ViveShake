@@ -5,10 +5,10 @@
  * 1- Whenever we assign a derived instance to a base instance, only the base class part of the object 
  * is copied and the rest is removed, this is called slicing.
  * 2- There are several ways in which object slicing can occur, some of them are:
- *      a. passing argumenst to fuctions by value : In order to avoid ths function parameter can have reference 
+ *      a. passing arguments to fuctions by value : In order to avoid ths function parameter can have reference 
  * to the object.
- *      b. using vectoes of type base class : In order to avoid this you can have pointer as a type of the 
- * vector since keeoping it as a reference will not work.
+ *      b. using vectors of type base class : In order to avoid this you can have pointer as a type of the 
+ * vector since keeping it as a reference will not work.
  * 3- The Frankenobject: This is the case where after the slicing is done the resulting object has both 
  * base and derived part of the instance.
  * @version 0.1
@@ -147,6 +147,7 @@ int main(int argc, char const *argv[])
     base = d1;
 
     std::cout << d2.getName() << " " << d2.getValue();
+    std::cout << base.getName() << " " << base.getValue();
     return 0;
 }
 //**************Frankenobject***

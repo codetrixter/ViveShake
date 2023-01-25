@@ -1,8 +1,8 @@
 /**
  * @file earlyBinding-lateBinding.cpp
  * @author Abhishek
- * @brief Here we discuss the concept of earl and late binding and how they are different from each other:
- * Binding:-> This refers to the process of converting varibales and functions names into addresses.
+ * @brief Here we discuss the concept of early and late binding and how they are different from each other:
+ * Binding:-> This refers to the process of converting variables and functions names into addresses.
  * 1- Early Binding(Direct addressing): In this case the compiler converts and replaces the function name with the machine address, which tells the cpu at 
  * runtime where to go. In this case only one thing happens at run time:
  *      a. jump to the resolved address.
@@ -108,13 +108,14 @@ int main()
     // Set pFcn to point to the function the user chose
     switch (op)
     {
-        case 0: pFcn = add; break;
-        case 1: pFcn = subtract; break;
-        case 2: pFcn = multiply; break;
+        case 0: pFcn = &add; break;
+        case 1: pFcn = &subtract; break;
+        case 2: pFcn = &multiply; break;
     }
 
     // Call the function that pFcn is pointing to with x and y as parameters
     // This uses late binding
+    // address resolution of the function pointer is done at run time.
     std::cout << "The answer is: " << pFcn(x, y) << '\n';
 
     return 0;

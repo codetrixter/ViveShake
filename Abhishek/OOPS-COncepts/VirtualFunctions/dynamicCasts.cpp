@@ -15,9 +15,11 @@
     b- For classes that do not declare or inherit any virtual functions (and thus don’t have a virtual table).
     c- In certain cases involving virtual base classes (see this page for an example of some of these cases, 
     and how to resolve them).
+
    2- the static cast works as well where the dynamic casting is used, but there is a caveat,
-   the static cast doen no runtime type checking to see if the conversion makes any sense or not, hence we 
+   the static cast does no runtime type checking to see if the conversion makes any sense or not, hence we 
    might get undefined behaviour or seg fault. 
+
    3- Dynamic casting works with reference as it worked with pointers, the only difference is when the casting is 
    unsuccessfull an std::bad_cast exception is thrown since there is no such thing as null reference.
 

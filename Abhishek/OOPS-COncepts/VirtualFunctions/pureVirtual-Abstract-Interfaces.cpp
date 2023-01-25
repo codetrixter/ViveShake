@@ -4,9 +4,9 @@
  * @brief Here we discuss about following:
  * 1- Pure virtual functions: These functions are the functions that are required to be redefined 
  * in the derived classes. These functions are maked by 0 suffixed at the end of the function signature.
- * 2- Abstract classes: These classes conatin one or more puer virtual functions adn cannot be instantiated. Hence it is
+ * 2- Abstract classes: These classes conatin one or more puer virtual functions and cannot be instantiated. Hence it is
  * necessary to extend/implemet these classes and override their pure virtual functions.
- * 3- Interface classes: Thes classes are the ones that do not have any function bodies, meaning all the functions 
+ * 3- Interface classes: These classes are the ones that do not have any function bodies, meaning all the functions 
  * are pure in nature.
  * 4- pure virtual functions can have bodies but they still need to be redefined/implemented in the derived classes
  * 

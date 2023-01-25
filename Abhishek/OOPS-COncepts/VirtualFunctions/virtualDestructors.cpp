@@ -2,9 +2,9 @@
  * @file virtualDestructors.cpp
  * @author Abhishek
  * @brief Here we discuss the usage of following:
- * 1- Virtual Destructors: This is necessary for avoiding memory leaks since the derived class obkects will not be deallocated properly since 
+ * 1- Virtual Destructors: This is necessary for avoiding memory leaks since the derived class objects will not be deallocated properly since 
  * the detructor of only base class is called as it is not virtual.
- * 2- Ignoring Virtualization: In cases when you want to call a base classs version of the function which is virtual, you can do so by using  :: 
+ * 2- Ignoring Virtualization: In cases when you want to call a base class version of the function which is virtual, you can do so by using  :: 
  * "scope resolution operator".
  * @version 0.1
  * @date 2022-07-31
@@ -18,7 +18,7 @@
 /* class Base
 {
 public:
-    //by makeing this virtual we ensure that derived class detructor is also called while deleting base class objects.
+    //by making this virtual we ensure that derived class detructor is also called while deleting base class objects.
     virtual ~Base() 
     {
         std::cout << "Calling ~Base()\n";
