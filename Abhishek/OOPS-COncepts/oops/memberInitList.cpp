@@ -1,7 +1,7 @@
 /**
  * @file memberInitList.cpp
  * @author Abhishek Mishra      
- * @brief C++11 provideas a way tp initialize the member variables of the class without asisgning values to them
+ * @brief C++11 provideas a way tp initialize the member variables of the class without assigning values to them
  * after they are created. It is called member initializer list.
  * @version 0.1
  * @date 2022-05-28

@@ -3,7 +3,7 @@
  * @author Abhishek 
  * @brief overlapng and delegating constructors/constructor chaining 
  * Rules for delegating:
- * 1- the contructor that delegates to another constructor cannot initialize the member varibles of the class,
+ * 1- the contructor that delegates to another constructor cannot initialize the member variables of the class,
  * it can do either delegation or initialization but not both.
  * 2- make sure that while creating a constructor delegation chain, there are no loops.
  * @version 0.1

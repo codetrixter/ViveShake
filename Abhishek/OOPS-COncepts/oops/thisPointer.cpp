@@ -12,7 +12,7 @@
 
 #include <iostream>
 /**
- * @brief Whenever a member function si calle with the object then there is a hidden class pointer is sent 
+ * @brief Whenever a member function is called with the object then there is a hidden class pointer is sent 
  * to that function via parameters which helps the function in calling the correct instances members
  */
 class Simple
