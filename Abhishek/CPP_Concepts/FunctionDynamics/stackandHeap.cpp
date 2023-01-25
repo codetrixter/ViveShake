@@ -49,9 +49,13 @@
  */
 
 #include <iostream>
-/* For normal variables like x, the compiler keeps track of x and determines where it is placed in memory. But variables don't actually exist in compiled code -- instead wherever the compiler sees x in our source code, it writes code that accesses the memory address it assigned to x.
+/* For normal variables like x, the compiler keeps track of x and determines where it is placed in memory. 
+But variables don't actually exist in compiled code -- instead wherever the compiler sees x in our source code, it writes code that 
+accesses the memory address it assigned to x.
 
-As a gross simplification: if the compiler decides x is at memory address 140, wherever it sees x in our code, it will generate compiled code that uses memory address 140 instead. The compiler knows x is at 140, but once the compilation is done, that information is discarded and the executable code only knows "go access the value at 140".
+As a gross simplification: if the compiler decides x is at memory address 140, wherever it sees x in our code, it will generate compiled 
+code that uses memory address 140 instead. The compiler knows x is at 140, but once the compilation is done, that information is 
+discarded and the executable code only knows "go access the value at 140".
 
 As a slightly less gross simplification: at compilation time, the compiler will lay out where all of the 
 normal variables are in memory as offsets from some base address (that will be provided at runtime). 

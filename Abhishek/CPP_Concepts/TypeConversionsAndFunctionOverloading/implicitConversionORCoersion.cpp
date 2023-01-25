@@ -10,7 +10,7 @@
  * c- Arithmetic conversions.
  * d- Other conversions.
  * When a type conversion is needed, the compiler will see if there are standard conversion that it can 
- * use to convert the value to the desired type. The compiler might ise 0 or more standard conversion in 
+ * use to convert the value to the desired type. The compiler might use 0 or more standard conversion in 
  * the conversion process.
  * @version 0.1
  * @date 2022-06-30

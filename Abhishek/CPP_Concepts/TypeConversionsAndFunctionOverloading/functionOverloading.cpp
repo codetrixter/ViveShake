@@ -2,7 +2,7 @@
  * @file functionOverloading.cpp
  * @author Abhishek
  * @brief Here we discuss the intrecacies of function overloading:
- * 1- Function differentiaition for overloading:
+ * 1- Function differentiation for overloading:
  *  a. Function name.
  *  b. Function param(number and types).
  *  c. const or volatile.
