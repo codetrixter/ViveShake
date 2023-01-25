@@ -1,16 +1,16 @@
 # TOPICS COVERED
 
-[Composition](composition/creature.hpp)
+1. [Composition](composition/creature.hpp)
 
-[Aggregation](aggregation/dept_teacher.cpp)
+2. [Aggregation](aggregation/dept_teacher.cpp)
 
-[Association](association/associativeRelation.cpp)
+3. [Association](association/associativeRelation.cpp)
 
-[Dependencies](dependencies/dependency.cpp)
+4. [Dependencies](dependencies/dependency.cpp)
 
-[Containers](Container/myInt.hpp)
+5. [Containers](Container/myInt.hpp)
 
-[Initializer List](initializerList.cpp)
+6. [Initializer List](initializerList.cpp)
 
 # What type of relationship (composition, aggregation, association, or dependency) do the following describe?
 ## a) An Animal class that contains an animal type (enum) and name (string).
