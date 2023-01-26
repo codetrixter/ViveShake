@@ -3,7 +3,8 @@
  * @author Abhishek
  * @brief 
     * TODO:
-    * 1- Each role should be performed by different functions, and we have to launch a thread with particular function to execute the given order.
+    * 1- Each role should be performed by different functions, and we have to launch a thread with
+	*  particular function to execute the given order.
     * 2- Lets assume there are three actors:
     * a. Captian: main thread-> can issue 3 commands.
     *		1. order cleaning crew to clean, captain does not have to wait for this untill its done.

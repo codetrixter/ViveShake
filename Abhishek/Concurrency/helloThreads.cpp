@@ -22,7 +22,7 @@ class callableClass
 public:
    void operator()()
    {
-      printf("Inside callableclass ()... %d \n", std::this_thread::get_id());
+      printf("Inside callable class ()... %d \n", std::this_thread::get_id());
    }
 };
 

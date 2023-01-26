@@ -1,8 +1,7 @@
 /**
  * @file TransferThreadOwnership.cpp
  * @author Abhishek
- * @brief Here we discuss how to transfer the ownership of a thread:
- * 1- 
+ * @brief Here we discuss how to transfer the ownership of a thread 
  * @version 0.1
  * @date 2022-09-18
  * 

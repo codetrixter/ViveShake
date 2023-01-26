@@ -9,7 +9,7 @@
     *
     * DETACH:
     * 1- detach() basically makes the launched thread independent to the parent thread or the thread that launched the thread on which detach is called.
-    * 2- WIth detach(), noth parent and chaild threads execute independently.
+    * 2- WIth detach(), both parent and child threads execute independently.
  * @version 0.1
  * @date 2022-09-18
  * 
@@ -63,7 +63,7 @@ void run()
 		printf("threads is not joinable... \n");
 }
 
-int main_JoinDetachTheory()
+int main()
 {
 	run();
 
