@@ -1,7 +1,7 @@
 # TYPES OF DESIGN PATTERNS
 Creational Pattern | Structural Pattern | Behavioral Pattern
 | :--- | :--- | :---:
-Builder    | Adapter | Chain of Resposibility
+Builder    | Adapter   | Chain of Resposibility
 Factories  | Bridge    | Command
 prototype  | Composite | Inetrpreter
 Singleton  | Decorator | Terator

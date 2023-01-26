@@ -141,6 +141,20 @@ void reverse(struct Node *p)
     first = temp;
 }
 
+void reverseTwo(struct Node *head)
+{
+    struct Node *prev = NULL, *next = NULL, *curr = head;
+    while(curr != NULL)
+    {
+        next = curr->next;
+        curr->next = prev;
+        prev = curr;
+        curr = next;
+        
+    }
+    first = prev;
+}
+
 void reverseRecursive(struct Node *prev, struct Node *curr)
 {
     static struct Node *temp = NULL, *prevNode = NULL;
@@ -164,6 +178,20 @@ struct Node* concatenate(struct Node *first, struct Node *second)
     temp->next = second;
 
     return first;
+}
+
+bool loopCheck(struct Node *head)
+{
+    struct Node *slow = head, *fast = head;
+
+    while(slow && fast && fast->next)
+    {
+        if(slow == fast)
+            return true;
+        slow = slow->next;
+        fast = fast->next->next;
+    }   
+    return false;
 }
 
 void merge(struct Node *first, struct Node *second)
@@ -264,6 +292,8 @@ int main()
 
     // std::cout <<"****reversing a linked list using sliding pointer method**** \n";
     // reverseRecursive(NULL, first);
+    // reverseTwo(first);
+    // reverse(first);
     // Display(first);
     // std::cout << "\n";
 
@@ -271,7 +301,10 @@ int main()
     // merge(first, second);
     // Display(MS);
 
-    std::cout << "****concatenating two singly linked list**** \n";
-    Display(concatenate(first, second));
+    //std::cout << "****concatenating two singly linked list**** \n";
+    //Display(concatenate(first, second));
+
+    std::cout << "****loop check in list****\n";
+    std::cout << std::boolalpha << loopCheck(first);
     return 0;
 }
