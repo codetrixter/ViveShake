@@ -76,6 +76,10 @@ void run_code1()
 
 	thread_1.join();
 	thread_2.join();
+
+	//Fetching the balance
+	std::cout << "account_1 balance : " << account_1.checkBalance() << std::endl;
+	std::cout << "account_2 balance : " << account_2.checkBalance() << std::endl;
 }
 
 

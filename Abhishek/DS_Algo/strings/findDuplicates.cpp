@@ -11,6 +11,8 @@
  * 
  */
 #include <iostream>
+#include <string>
+#include <unordered_map>
 
 void findDuplicates(char *str)
 {
@@ -32,10 +34,29 @@ void findDuplicates(char *str)
     }
 }
 
+//------------Alternatively-------------
+void findDuplicates(std::string str)
+{
+    std::unordered_map<char, int> mapp;
+
+    for(int i = 0; i <= str.length()-1; i++)
+    {
+        mapp[str[i]]++;
+    }
+
+    for(auto item : mapp)
+    {
+        std::cout << item.first << " " << item.second << std::endl;
+    }
+}
+
 int main(int argc, char const *argv[])
 {
     char str[] = "malayalam";
 
     findDuplicates(str);
+    //std::string s = "abhishek";
+    //findDuplicates(s);
+
     return 0;
 }

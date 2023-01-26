@@ -37,7 +37,8 @@ public:
 
     std::list<int> *get_data()
     {
-        // Here once the pointer to the list is handed over, we can no longer ensure the thread safety of this member since it can be used in any way.
+        // Here once the pointer to the list is handed over,
+        // we can no longer ensure the thread safety of this member since it can be used in any way.
         return &my_list;
     }
 };

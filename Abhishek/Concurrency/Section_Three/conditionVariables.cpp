@@ -30,7 +30,6 @@
 #include <mutex>
 #include <thread>
 #include <string>
-#include <thread>
 #include <chrono>
 #include <condition_variable>
 
