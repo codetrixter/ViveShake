@@ -61,6 +61,8 @@ bool Point::operator! () const
 int main()
 {
     Point point{}; // use default constructor to set to (0.0, 0.0, 0.0)
+    Point temp = -point;
+    std::cout << -temp.getX() << std::endl;
 
     if (!point)
         std::cout << "point is set at the origin.\n";
