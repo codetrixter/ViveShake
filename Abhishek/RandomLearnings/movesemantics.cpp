@@ -1,42 +1,40 @@
 #include <iostream>
+#include <string>
 
-/* class Move
+using namespace std;
+
+class A
 {
-private:
-    int *data; // raw pointer
 public:
-    void set_data_value(int d) { *data = d; }
-    int get_data_value() { return *data; }
-    Move(int d);              // Constructor
-    Move(const Move &source); // Copy Constructor
-    Move(Move &&source);      // Move Constructor
-    ~Move();                  // Destructor
+    // default constructor
+    A() : s("default") {}
+
+    // copy constructor
+    A(const A& o) : s(o.s) { cout << "move failed!\n";}
+
+    // move constructor
+    A(A&& o) : s(move(o.s)) { cout << "moving\n";}
+
+    string printObj() { return s; }
+private:
+    string s;
 };
-Move::Move(Move &&source)
-    : data{source.data}
-{
-    source.data = nullptr; // Steal the data and then null out the source pointer
+
+A temp(A a) {
+    return a;
 }
 
-int main(int argc, char const *argv[])
+int main()
 {
+    // move-construct from rvalue temporary
+    A a1 = temp(A());        
+
+    // move-construct from lvalue 
+    cout << "before move() : a1 = " << a1.printObj() << endl; 
+    //called move ctor as called using move
+    A a2 = move(a1);          
+    cout << "after move() : a1 = " << a1.printObj() << endl;
+    cout << "after move() : a2 = " << a2.printObj() << endl;
+
     return 0;
-} */
-
-
-class Abhi
-{
-    public:
-    int *a;
-
-    Abhi(int val):
-    a{new int}
-    {
-        *a = val;
-    }
-
-    Abhi(const Abhi& ab)
-    {
-        
-    }
-};
+}

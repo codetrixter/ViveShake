@@ -7,10 +7,10 @@
  * 2- Deep copy is used so that any dynamic memory allocation within an instance can be copied/assigned
  * properly.
  * NOTE: A better solution
- * Classes in the standard library that deal with dynamic memory, such as std::string and std::vector, 
- * handle all of their memory management, and have overloaded copy constructors and assignment operators that 
- * do proper deep copying. So instead of doing your own memory management, you can just initialize or assign 
- * them like normal fundamental variables! That makes these classes simpler to use, less error-prone, and you 
+ * Classes in the standard library that deal with dynamic memory, such as std::string and std::vector,
+ * handle all of their memory management, and have overloaded copy constructors and assignment operators that
+ * do proper deep copying. So instead of doing your own memory management, you can just initialize or assign
+ * them like normal fundamental variables! That makes these classes simpler to use, less error-prone, and you
  * don’t have to spend time writing your own overloaded functions!
  * @version 0.1
  * @date 2022-08-23
@@ -66,93 +66,147 @@ public:
 }; */
 //***************************Shallow copying***
 //***************************Deep copying***
-#include <cstring> // for strlen()
-#include <cassert> // for assert()
+// #include <cstring> // for strlen()
+// #include <cassert> // for assert()
 
-class MyString
+// class MyString
+// {
+// private:
+//     char *m_data{};
+//     int m_length{};
+
+// public:
+//     MyString(const char *source = "")
+//     {
+//         assert(source); // make sure source isn't a null string
+
+//         // Find the length of the string
+//         // Plus one character for a terminator
+//         m_length = std::strlen(source) + 1;
+
+//         // Allocate a buffer equal to this length
+//         m_data = new char[m_length];
+
+//         // Copy the parameter string into our internal buffer
+//         for (int i{0}; i < m_length; ++i)
+//             m_data[i] = source[i];
+//     }
+
+//     // Default copy constructor would look something like this
+//     /* MyString(const MyString &source)
+//         : m_length{source.m_length}, m_data{source.m_data}
+//     {
+//     } */
+
+//     MyString(const MyString &source)
+//     {
+//         deepCopy(source);
+//     }
+
+//     MyString &operator=(const MyString &source)
+//     {
+//         if (this != &source)
+//             deepCopy(source);
+
+//         return *this;
+//     }
+
+//     ~MyString() // destructor
+//     {
+//         // We need to deallocate our string
+//         delete[] m_data;
+//     }
+
+//     void deepCopy(const MyString &source)
+//     {
+//         // first we need to deallocate any value that this string is holding!
+//         delete[] m_data;
+
+//         // because m_length is not a pointer, we can shallow copy it
+//         m_length = source.m_length;
+
+//         // m_data is a pointer, so we need to deep copy it if it is non-null
+//         if (source.m_data)
+//         {
+//             // allocate memory for our copy
+//             m_data = new char[m_length];
+
+//             // do the copy
+//             for (int i{0}; i < m_length; ++i)
+//                 m_data[i] = source.m_data[i];
+//         }
+//         else
+//             m_data = nullptr;
+//     }
+
+//     char *getString() { return m_data; }
+//     int getLength() { return m_length; }
+// };
+
+// int main()
+// {
+//     // error:free(): double free detected in tcache 2, Aborted (core dumped)
+//     MyString hello{"Hello, world!"};
+//     {
+//         MyString copy{hello}; // use default copy constructor
+//     }                         // copy is a local variable, so it gets destroyed here. The destructor deletes copy's string, which leaves hello with a dangling pointer
+
+//     std::cout << hello.getString() << '\n'; // this will have undefined behavior
+
+//     return 0;
+// }
+//***************************Deep copying***
+
+//--------Alternate example----------
+#include <iostream>
+using namespace std;
+
+class DummyClass
 {
 private:
-    char *m_data{};
-    int m_length{};
+    int num1, num2;
+    int *ptr;
 
 public:
-    MyString(const char *source = "")
+    DummyClass()
     {
-        assert(source); // make sure source isn't a null string
-
-        // Find the length of the string
-        // Plus one character for a terminator
-        m_length = std::strlen(source) + 1;
-
-        // Allocate a buffer equal to this length
-        m_data = new char[m_length];
-
-        // Copy the parameter string into our internal buffer
-        for (int i{0}; i < m_length; ++i)
-            m_data[i] = source[i];
+        ptr = new int;
     }
 
-    // Default copy constructor would look something like this
-    /* MyString(const MyString &source)
-        : m_length{source.m_length}, m_data{source.m_data}
+    void setData(int x, int y, int z)
     {
-    } */
-
-    MyString(const MyString& source)
-    {
-        deepCopy(source);
+        num1 = x;
+        num2 = y;
+        *ptr = z;
     }
 
-    MyString& operator= (const MyString& source)
+    void showData()
     {
-        if(this != &source)
-            deepCopy(source);
-
-        return *this;
+        cout << "A = " << num1 << " B = " << num2 << endl;
     }
 
-    ~MyString() // destructor
+    // copy constructor -> it is responsible for deep copy.
+    DummyClass(DummyClass &D)
     {
-        // We need to deallocate our string
-        delete[] m_data;
+        num1 = D.num1;
+        num2 = D.num2;
+        *ptr = *(D.ptr);
     }
 
-    void deepCopy(const MyString& source)
+    // destructor -> to deallocate memory consumed by new pointer ptr.
+    ~DummyClass()
     {
-        // first we need to deallocate any value that this string is holding!
-        delete[] m_data;
-
-        // because m_length is not a pointer, we can shallow copy it
-        m_length = source.m_length;
-
-        // m_data is a pointer, so we need to deep copy it if it is non-null
-        if (source.m_data)
-        {
-            // allocate memory for our copy
-            m_data = new char[m_length];
-
-            // do the copy
-            for (int i{0}; i < m_length; ++i)
-                m_data[i] = source.m_data[i];
-        }
-        else
-            m_data = nullptr;
+        delete ptr;
     }
-
-    char *getString() { return m_data; }
-    int getLength() { return m_length; }
 };
 
 int main()
 {
-    // error:free(): double free detected in tcache 2, Aborted (core dumped)
-    MyString hello{"Hello, world!"};
-    {
-        MyString copy{hello}; // use default copy constructor
-    }                         // copy is a local variable, so it gets destroyed here. The destructor deletes copy's string, which leaves hello with a dangling pointer
+    DummyClass D1;
+    D1.setData(3, 5, 11);
+    D1.showData();
 
-    std::cout << hello.getString() << '\n'; // this will have undefined behavior
-
-    return 0;
+    // Copy constructor declared above will came in action and do deep copy.
+    DummyClass D2 = D1;
+    D2.showData();
 }
-//***************************Deep copying***
