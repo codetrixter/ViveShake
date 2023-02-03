@@ -38,7 +38,8 @@ public:
             }
             else
             {
-                hash.insert({nums[i], i});
+                //hash.insert({nums[i], i});
+                hash[nums[i]] = i;
             }
         }
         return resultInd;
