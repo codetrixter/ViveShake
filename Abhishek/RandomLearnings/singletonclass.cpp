@@ -31,6 +31,7 @@ class single
         return *s.get();
     }
     ~single() =default;
+    
     private:
     single() = default;
     single(const single&) = delete;
