@@ -25,8 +25,9 @@ public:
 int main(int argc, char const *argv[])
 {
     // This will be regarded as a function declaration , which returns Widget and takes no arguments 
-    // instead of default ctor.
-    Widget w(); 
+    // instead of default ctor. We should use brace init to avoid such errors.
+    Widget (w());	//Widget w{}; 
+	
     return 0;
 }
 

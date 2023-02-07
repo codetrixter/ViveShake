@@ -19,7 +19,7 @@ private:
 
 public:
     Widget(int x) : _data(x) {}
-    //bool operator==(const Widget &rhs) { return this->data() == rhs.data(); }
+    bool operator==(const Widget &rhs) { return this->data() == rhs.data(); }
     int data() const { return _data; }
 };
 
@@ -28,12 +28,12 @@ int main(int argc, char const *argv[])
     typedef vector<Widget> WidgetContainer;
 
     typedef WidgetContainer::iterator WCIterator;
-    sort(WidgetContainer.begin(), WidgetContainer.end());
-    // WidgetContainer vw{Widget(1), Widget(2), Widget(3)};
+    //sort(WidgetContainer.begin(), WidgetContainer.end());
+    WidgetContainer vw{Widget(1), Widget(2), Widget(3)};
 
-    // Widget bestWidget(2);
+    Widget bestWidget(2);
 
-    // WCIterator i = find(vw.begin(), vw.end(), bestWidget);
+    WCIterator i = find(vw.begin(), vw.end(), bestWidget);
 
     // WidgetContainer::difference_type distance = i - vw.cbegin();
     return 0;
