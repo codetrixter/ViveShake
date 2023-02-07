@@ -27,7 +27,7 @@ std::list<int> addNumbers(std::list<int>& list1, std::list<int>& list2)
 
     while(it1 != list1.end() || it2 != list2.end())
     {
-        list3.push_back((*it1 + *it2 + carry)%10); 
+        list3.push_front((*it1 + *it2 + carry)%10); 
         carry = (*it1 + *it2 + carry)/10;
         it1++; it2++;
     }
@@ -36,7 +36,7 @@ std::list<int> addNumbers(std::list<int>& list1, std::list<int>& list2)
     {
         while(it2 != list2.end())
         {
-            list3.push_back((*it2 + carry) % 10);
+            list3.push_front((*it2 + carry) % 10);
             carry = *it2 + carry / 10;
             it2++;
         }   
@@ -45,7 +45,7 @@ std::list<int> addNumbers(std::list<int>& list1, std::list<int>& list2)
     {
         while(it1 != list1.end())
         {
-            list3.push_back((*it1 + carry) % 10);
+            list3.push_front((*it1 + carry) % 10);
             carry = *it1 + carry / 10;
             it1++;
         }   
@@ -59,7 +59,7 @@ int main(int argc, char const *argv[])
     std::list<int> l2 = {3, 9, 9};
 
     auto sumlist = addNumbers(l1, l2);
-    sumlist.reverse();
+    //sumlist.reverse();
 
     for(auto item : sumlist)
     {
