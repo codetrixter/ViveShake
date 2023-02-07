@@ -47,7 +47,7 @@ void keep_moving()
 		distance_coverd++;
         std::cout << "moving towards destination... \n";
 
-		//notify the waiting threads if the event occurss
+		//notify the waiting threads if the event occurs
 		if (distance_coverd == total_distance)
 			cv.notify_one();
 	}
