@@ -22,35 +22,25 @@
 #include <bits/stdc++.h>
 using namespace std;
 
-/* int reverse(int x)
-{
-    vector<int> rev;
-    if (x / 10 == 0)
-        return x;
-
-    int temp = abs(x);
-    int sum = 0;
-    while (temp != 0)
-    {
-        rev.push_back(temp % 10);
-        temp = temp / 10;
-    }
-
-    int n = rev.size() - 1;
-    for (auto i : rev)
-    {
-        sum += i * pow(10, n--);
-        if (sum > INT_MAX)
-            return 0;
-    }
-
-    if (x < 0)
-        return sum * -1;
-    else
-        return sum;
-} */
-//---------Alternate working within range------
 int reverse(int x)
+{
+    int res = 0;
+    while (x != 0)
+    {
+        int digit = x % 10;
+        x = x / 10;
+        //We need to make sure that after reversing the value does not gets bigger than range of int.
+        if (res > INT_MAX / 10 || res == INT_MAX / 10 && digit >= INT_MAX % 10)
+            return 0;
+        else if (res < INT_MIN / 10 || res == INT_MIN / 10 && digit <= INT_MIN % 10)
+            return 0;
+        res = res * 10 + digit;
+    }
+    return res;
+}
+
+//---------Alternate working within range------
+/* int reverse(int x)
 {
     int reverseNumber = 0;
     while (x != 0)
@@ -64,7 +54,7 @@ int reverse(int x)
         x = x / 10;
     }
     return reverseNumber;
-}
+} */
 
 //-----------------------------------------------
 
