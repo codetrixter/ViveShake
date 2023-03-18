@@ -9,7 +9,7 @@ using namespace std;
 
 //! Rule to identify the constness of the variable defined:
 //! 1- If the const appears to the left of the asterisk->the object pointed by the pointer is constant.
-//! 2- If the const appears to the right of the asterisk->the pointer ite=sef is constant.
+//! 2- If the const appears to the right of the asterisk->the pointer itself is constant.
 namespace constants
 {
     char greeting[] = "Hello";
