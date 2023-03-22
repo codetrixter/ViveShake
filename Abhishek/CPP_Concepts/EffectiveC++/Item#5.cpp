@@ -75,8 +75,8 @@ int main(int argc, char const *argv[])
     // Here neither copy ctor nor copy ass. operatirs were created by the compiler.
     //runCase1();
 
-    // Here since the memebre variabkes are of type reference and constant, the compiler does not knows
-    // how to write a default opy ctor/copy ass. oper. function, since references cannot be made to refere 
+    // Here since the memebre variables are of type reference and constant, the compiler does not knows
+    // how to write a default copy ctor/copy ass. oper. function, since references cannot be made to refere 
     // to a different object and constant member variables cannot be assigned values just like that.
     runCase2();
     return 0;
